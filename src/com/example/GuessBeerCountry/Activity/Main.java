@@ -13,8 +13,6 @@ import com.example.GuessBeerCountry.Library.Language;
 import com.example.GuessBeerCountry.Library.Utility;
 import com.example.GuessBeerCountry.R;
 
-import java.util.ArrayList;
-
 /**
  * Created by Alberto Tosi Brandi on 07/10/2014.
  */
@@ -158,7 +156,7 @@ public class Main extends Activity {
     private void executeAsyncTask(ComponentName name){
         NewDatabaseHelper databaseHelper = Utility.GetDataBaseHelper(this.getBaseContext());
         switch(name){
-            case BestScore::
+            case BestScore:
                 new Score(this).execute(databaseHelper);
                 break;
             case About:
