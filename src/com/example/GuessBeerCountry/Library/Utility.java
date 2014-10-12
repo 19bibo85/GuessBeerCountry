@@ -1,25 +1,38 @@
 package com.example.GuessBeerCountry.Library;
 
 import android.annotation.TargetApi;
-import java.lang.reflect.Field;
-
+import android.content.Context;
 import android.content.res.AssetManager;
+import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.os.Build;
-import android.content.Context;
-import android.content.res.Configuration;
 import android.preference.PreferenceManager;
 import android.widget.ImageView;
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.SherlockActivity;
+
+import java.lang.reflect.Field;
 
 /**
  * Created by Alberto Tosi Brandi on 05/10/2014.
  */
 public class Utility {
 
-    public static Typeface GetFont(SherlockActivity activity){
-        final String FONT_PATH = "font/handwritten.ttf";
+    public static void SetActionBar(ActionBar actionBar, SherlockActivity activity) {
+
+    }
+
+    public static void InitializeAudio(SherlockActivity activity) {
+
+    }
+
+    public static void SetTransition(SherlockActivity activity, ComponentName name) {
+
+    }
+
+    public static Typeface GetFont(SherlockActivity activity) {
         final AssetManager assets = activity.getResources().getAssets();
-        return Typeface.createFromAsset(assets, FONT_PATH);
+        return Typeface.createFromAsset(assets, AppConfig.FONT_PATH);
     }
 
     public static int GetResId(String variableName, Class<?> c) {
@@ -32,35 +45,35 @@ public class Utility {
         }
     }
 
-    public static Object[] GetSharedPreference(Context context){
+    public static Object[] GetSharedPreference(SherlockActivity activity) {
         return new Object[]{
                 PreferenceManager
-                        .getDefaultSharedPreferences(context)
+                        .getDefaultSharedPreferences(activity.getBaseContext())
                         .getString(PreferenceName.Language.toString(),
-                                   AppConfig.PREF_LANGUAGE_DEF),
+                                AppConfig.PREF_LANGUAGE_DEF),
                 PreferenceManager
-                        .getDefaultSharedPreferences(context)
+                        .getDefaultSharedPreferences(activity.getBaseContext())
                         .getString(PreferenceName.Theme.toString(),
-                                   AppConfig.PREF_THEME_DEF),
+                                AppConfig.PREF_THEME_DEF),
                 PreferenceManager
-                        .getDefaultSharedPreferences(context)
+                        .getDefaultSharedPreferences(activity.getBaseContext())
                         .getString(PreferenceName.Range.toString(),
-                                   AppConfig.PREF_RANGE_DEF),
+                                AppConfig.PREF_RANGE_DEF),
                 PreferenceManager
-                        .getDefaultSharedPreferences(context)
+                        .getDefaultSharedPreferences(activity.getBaseContext())
                         .getBoolean(PreferenceName.Sound.toString(),
                                 AppConfig.PREF_SOUND_DEF),
                 PreferenceManager
-                        .getDefaultSharedPreferences(context)
+                        .getDefaultSharedPreferences(activity.getBaseContext())
                         .getBoolean(PreferenceName.Update.toString(),
                                 AppConfig.PREF_UPDATE_DEF)
         };
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
-    public static void ScaleSizeForTablet(Context ctx, ImageView image){
+    public static void ScaleSizeForTablet(Context ctx, ImageView image) {
         Configuration config = ctx.getResources().getConfiguration();
-        if (config.smallestScreenWidthDp >= AppConfig.TABLET_SCREEN_WIDTH){
+        if (config.smallestScreenWidthDp >= AppConfig.TABLET_SCREEN_WIDTH) {
             image.setScaleX(AppConfig.TABLET_SCALE);
             image.setScaleY(AppConfig.TABLET_SCALE);
         }

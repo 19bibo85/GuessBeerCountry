@@ -1,12 +1,12 @@
 package com.example.GuessBeerCountry.Activity;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ScrollView;
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.SherlockActivity;
 import com.example.GuessBeerCountry.Library.AppConfig;
 import com.example.GuessBeerCountry.Library.ComponentName;
 import com.example.GuessBeerCountry.Library.Language;
@@ -16,7 +16,7 @@ import com.example.GuessBeerCountry.R;
 /**
  * Created by Alberto Tosi Brandi on 07/10/2014.
  */
-public class Main extends Activity {
+public class Main extends SherlockActivity {
     public static ScrollView ScrollView;
     public static Button Start;
     public static Button BestScore;
@@ -31,8 +31,8 @@ public class Main extends Activity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.main);
 
-            com.actionbarsherlock.app.ActionBar actionBar = getSupportActionBar();
-            Utility.SetActionBar(actionBar, this.getBaseContext());
+            ActionBar actionBar = getSupportActionBar();
+            Utility.SetActionBar(actionBar, this);
 
             ScrollView = (ScrollView) findViewById(R.id.scroll_view);
 
@@ -78,18 +78,17 @@ public class Main extends Activity {
 
             Title.SetTitle(ComponentName.Main, actionBar, this.getBaseContext());
             Language.SetLanguage(ComponentName.Main, this);
-            Resources.Theme.SetTheme(ComponentName.Main, this.getBaseContext());
+            Theme.SetTheme(ComponentName.Main, this.getBaseContext());
 
             // Set the theme and the language
-            String[] sharedPreference = (String[]) Utility
-                    .GetSharedPreference(this.getBaseContext());
+            Object[] sharedPreference = Utility.GetSharedPreference(this);
             if (sharedPreference.length == AppConfig.PREFERENCE) {
-                LanguageSelected = sharedPreference[AppConfig.PREF_LANGUAGE_INDEX];
-                ThemeSelected = sharedPreference[AppConfig.PREF_THEME_INDEX];
+                LanguageSelected = (String) sharedPreference[AppConfig.PREF_LANGUAGE_INDEX];
+                ThemeSelected = (String) sharedPreference[AppConfig.PREF_THEME_INDEX];
             }
 
-            IMBanner banner = (IMBanner) findViewById(R.id.adView);
-            banner.loadBanner();
+            //IMBanner banner = (IMBanner) findViewById(R.id.adView);
+            //banner.loadBanner();
         }catch(Exception e){
 
         }
@@ -103,26 +102,23 @@ public class Main extends Activity {
     @Override
     public void onResume(){
         super.onResume();
-        Utility.InitializeAudio(getBaseContext());
-        Utility.SetTransition(this.getBaseContext(),
-                              this,
-                              ComponentName.Main);
+        Utility.InitializeAudio(this);
+        Utility.SetTransition(this, ComponentName.Main);
 
         // Set the theme and the language
-        String[] sharedPreference = (String[])Utility
-                                              .GetSharedPreference(this.getBaseContext());
+        Object[] sharedPreference = Utility.GetSharedPreference(this);
 
         if(sharedPreference.length == AppConfig.PREFERENCE)
         {
             if(LanguageSelected != sharedPreference[AppConfig.PREF_LANGUAGE_INDEX])
             {
-                LanguageSelected = sharedPreference[AppConfig.PREF_LANGUAGE_INDEX];
+                LanguageSelected = (String) sharedPreference[AppConfig.PREF_LANGUAGE_INDEX];
                 Language.SetLanguage(ComponentName.Main, this);
             }
 
             if(ThemeSelected != sharedPreference[AppConfig.PREF_THEME_INDEX])
             {
-                ThemeSelected = sharedPreference[AppConfig.PREF_THEME_INDEX];
+                ThemeSelected = (String) sharedPreference[AppConfig.PREF_THEME_INDEX];
                 Intent intent = this.getIntent();
                 intent.putExtra("NoTransition", true);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -135,7 +131,6 @@ public class Main extends Activity {
     public boolean onCreateOptionsMenu(com.actionbarsherlock.view.Menu menu) {
         com.actionbarsherlock.view.MenuInflater inflater = getSupportMenuInflater();
         inflater.inflate(R.menu.activity_main_actions, menu);
-        //Log.i(Logs.MAIN, "Option menu has been create.");
         return super.onCreateOptionsMenu(menu);
     }
 

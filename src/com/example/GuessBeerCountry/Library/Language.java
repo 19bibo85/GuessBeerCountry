@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.widget.Button;
 import android.widget.TextView;
+import com.actionbarsherlock.app.SherlockActivity;
 import com.example.GuessBeerCountry.Activity.*;
-import com.example.GuessBeerCountry.R;
 
 import static com.example.GuessBeerCountry.R.array;
 
@@ -15,7 +15,7 @@ import static com.example.GuessBeerCountry.R.array;
  */
 public class Language {
 
-    public static void SetLanguage(ComponentName name, Activity activity){
+    public static void SetLanguage(ComponentName name, SherlockActivity activity) {
         switch (name) {
             case Splashscreen:
                 SetSplashscreen(activity);
@@ -46,27 +46,25 @@ public class Language {
         }
     }
 
-    private static void SetSplashscreen(Activity activity){
-        Object[] prefs = Utility
-                        .GetSharedPreference(activity.getBaseContext());
+    private static void SetSplashscreen(SherlockActivity activity) {
+        Object[] prefs = Utility.GetSharedPreference(activity);
 
         TextView loading = ((SplashScreen) activity).Loading;
         loading.setText(AppConfig.SPLASH_LOADING_DEF);
 
         if (prefs.length == AppConfig.PREFERENCE) {
             String[] strings = GetStringArray(ComponentName.Splashscreen,
-                                              activity.getBaseContext(),
-                                              prefs[AppConfig.PREF_LANGUAGE_INDEX].toString(),
-                                              AppConfig.SPLASH_LANGUAGE_SIZE);
+                    activity.getBaseContext(),
+                    prefs[AppConfig.PREF_LANGUAGE_INDEX].toString(),
+                    AppConfig.SPLASH_LANGUAGE_SIZE);
 
-            if(strings != null)
-                loading.setText(strings[AppConfig.SPLASH_LOADING_INDEX]+"...");
+            if (strings != null)
+                loading.setText(strings[AppConfig.SPLASH_LOADING_INDEX] + "...");
         }
     }
 
-    private static void SetMain(Activity activity) {
-        Object[] prefs = Utility
-                        .GetSharedPreference(activity.getBaseContext());
+    private static void SetMain(SherlockActivity activity) {
+        Object[] prefs = Utility.GetSharedPreference(activity);
 
         Button start = ((Main) activity).Start;
         start.setText(AppConfig.MAIN_START_DEF);
@@ -82,11 +80,10 @@ public class Language {
 
         if (prefs.length == AppConfig.PREFERENCE) {
             String[] strings = GetStringArray(ComponentName.Main,
-                                              activity.getBaseContext(),
-                                              prefs[AppConfig.PREF_LANGUAGE_INDEX].toString(),
-                                              AppConfig.MAIN_LANGUAGE_SIZE);
-            if(strings != null)
-            {
+                    activity.getBaseContext(),
+                    prefs[AppConfig.PREF_LANGUAGE_INDEX].toString(),
+                    AppConfig.MAIN_LANGUAGE_SIZE);
+            if (strings != null) {
                 start.setText(strings[AppConfig.MAIN_START_INDEX]);
                 bestScore.setText(AppConfig.MAIN_BEST_SCORE_INDEX);
                 list.setText(AppConfig.MAIN_LIST_INDEX);
@@ -95,9 +92,8 @@ public class Language {
         }
     }
 
-    private static void SetStart(Activity activity){
-        Object[] prefs = Utility
-                         .GetSharedPreference(activity.getBaseContext());
+    private static void SetStart(SherlockActivity activity) {
+        Object[] prefs = Utility.GetSharedPreference(activity);
 
         TextView easy = ((Start) activity).Easy;
         easy.setText(AppConfig.START_EASY_DEF);
@@ -122,11 +118,10 @@ public class Language {
 
         if (prefs.length == AppConfig.PREFERENCE) {
             String[] strings = GetStringArray(ComponentName.Start,
-                                              activity.getBaseContext(),
-                                              prefs[AppConfig.PREF_LANGUAGE_INDEX].toString(),
-                                              AppConfig.START_LANGUAGE_SIZE);
-            if(strings != null)
-            {
+                    activity.getBaseContext(),
+                    prefs[AppConfig.PREF_LANGUAGE_INDEX].toString(),
+                    AppConfig.START_LANGUAGE_SIZE);
+            if (strings != null) {
                 easy.setText(strings[AppConfig.START_EASY_INDEX]);
                 medium.setText(AppConfig.START_MEDIUM_INDEX);
                 hard.setText(AppConfig.START_HARD_INDEX);
@@ -138,9 +133,8 @@ public class Language {
         }
     }
 
-    private static void SetBestScore(Activity activity){
-        Object[] prefs = Utility
-                         .GetSharedPreference(activity.getBaseContext());
+    private static void SetBestScore(SherlockActivity activity) {
+        Object[] prefs = Utility.GetSharedPreference(activity);
 
         TextView easy = ((BestScore) activity).Easy;
         easy.setText(AppConfig.BEST_SCORE_EASY_DEF);
@@ -165,11 +159,10 @@ public class Language {
 
         if (prefs.length == AppConfig.PREFERENCE) {
             String[] strings = GetStringArray(ComponentName.Start,
-                                              activity.getBaseContext(),
-                                              prefs[AppConfig.PREF_LANGUAGE_INDEX].toString(),
-                                              AppConfig.BEST_SCORE_LANGUAGE_SIZE);
-            if(strings != null)
-            {
+                    activity.getBaseContext(),
+                    prefs[AppConfig.PREF_LANGUAGE_INDEX].toString(),
+                    AppConfig.BEST_SCORE_LANGUAGE_SIZE);
+            if (strings != null) {
                 easy.setText(AppConfig.BEST_SCORE_EASY_INDEX);
                 medium.setText(AppConfig.BEST_SCORE_MEDIUM_INDEX);
                 hard.setText(AppConfig.BEST_SCORE_HARD_INDEX);
@@ -181,9 +174,8 @@ public class Language {
         }
     }
 
-    private static void SetScore(Activity activity){
-        Object[] prefs = Utility
-                         .GetSharedPreference(activity.getBaseContext());
+    private static void SetScore(SherlockActivity activity) {
+        Object[] prefs = Utility.GetSharedPreference(activity);
 
         TextView gameOver = ((Score) activity).GameOver;
         gameOver.setText(AppConfig.SCORE_GAME_OVER_DEF);
@@ -208,11 +200,10 @@ public class Language {
 
         if (prefs.length == AppConfig.PREFERENCE) {
             String[] strings = GetStringArray(ComponentName.Score,
-                                              activity.getBaseContext(),
-                                              prefs[AppConfig.PREF_LANGUAGE_INDEX].toString(),
-                                              AppConfig.SCORE_LANGUAGE_SIZE);
-            if(strings != null)
-            {
+                    activity.getBaseContext(),
+                    prefs[AppConfig.PREF_LANGUAGE_INDEX].toString(),
+                    AppConfig.SCORE_LANGUAGE_SIZE);
+            if (strings != null) {
                 gameOver.setText(AppConfig.SCORE_GAME_OVER_INDEX);
                 correctAnswer.setText(AppConfig.SCORE_CORRECT_ANSWER_INDEX);
                 wrongAnswer.setText(AppConfig.SCORE_WRONG_ANSWER_INDEX);
@@ -224,12 +215,11 @@ public class Language {
         }
     }
 
-    private static void SetStats(Activity activity){
+    private static void SetStats(Activity activity) {
     }
 
-    private static void SetStatsList(Activity activity){
-        Object[] prefs = Utility
-                         .GetSharedPreference(activity.getBaseContext());
+    private static void SetStatsList(SherlockActivity activity) {
+        Object[] prefs = Utility.GetSharedPreference(activity);
 
         TextView general = ((StatsList) activity).General;
         general.setText(AppConfig.STATS_LIST_GENERAL_DEF);
@@ -242,11 +232,10 @@ public class Language {
 
         if (prefs.length == AppConfig.PREFERENCE) {
             String[] strings = GetStringArray(ComponentName.StatsList,
-                                              activity.getBaseContext(),
-                                              prefs[AppConfig.PREF_LANGUAGE_INDEX].toString(),
-                                              AppConfig.STATS_LIST_LANGUAGE_SIZE);
-            if(strings != null)
-            {
+                    activity.getBaseContext(),
+                    prefs[AppConfig.PREF_LANGUAGE_INDEX].toString(),
+                    AppConfig.STATS_LIST_LANGUAGE_SIZE);
+            if (strings != null) {
                 general.setText(AppConfig.STATS_LIST_GENERAL_INDEX);
                 time.setText(AppConfig.STATS_LIST_TIME_INDEX);
                 noTime.setText(AppConfig.STATS_LIST_NO_TIME_INDEX);
@@ -254,9 +243,8 @@ public class Language {
         }
     }
 
-    private static void SetAbout(Activity activity){
-        Object[] prefs = Utility
-                         .GetSharedPreference(activity.getBaseContext());
+    private static void SetAbout(SherlockActivity activity) {
+        Object[] prefs = Utility.GetSharedPreference(activity);
 
         TextView version = ((About) activity).Version;
         version.setText(AppConfig.ABOUT_VERSION_DEF);
@@ -272,11 +260,10 @@ public class Language {
 
         if (prefs.length == AppConfig.PREFERENCE) {
             String[] strings = GetStringArray(ComponentName.About,
-                                              activity.getBaseContext(),
-                                              prefs[AppConfig.PREF_LANGUAGE_INDEX].toString(),
-                                              AppConfig.ABOUT_LANGUAGE_SIZE);
-            if(strings != null)
-            {
+                    activity.getBaseContext(),
+                    prefs[AppConfig.PREF_LANGUAGE_INDEX].toString(),
+                    AppConfig.ABOUT_LANGUAGE_SIZE);
+            if (strings != null) {
                 version.setText(AppConfig.ABOUT_VERSION_INDEX);
                 developer.setText(AppConfig.ABOUT_DEVELOPER_INDEX);
                 acknowledge.setText(AppConfig.ABOUT_ACKNOWLEDGE_INDEX);
@@ -285,31 +272,30 @@ public class Language {
         }
     }
 
-    public static String[] GetAlertStrings(final SplashScreen activity,
+    public static String[] GetAlertStrings(SherlockActivity activity,
                                            ComponentName activityName,
-                                           final int activityStringNum) {
+                                           int activityStringNum) {
 
-        Object[] prefs = Utility
-                         .GetSharedPreference(activity.getBaseContext());
+        Object[] prefs = Utility.GetSharedPreference(activity);
 
         if (prefs.length != AppConfig.PREFERENCE)
-            return new String[]{ AppConfig.SPLASH_ALERT_DEF_TITLE,
-                                 AppConfig.SPLASH_ALERT_DEF_MESSAGE ,
-                                 AppConfig.SPLASH_ALERT_DEF_CONFIRM};
+            return new String[]{AppConfig.SPLASH_ALERT_DEF_TITLE,
+                    AppConfig.SPLASH_ALERT_DEF_MESSAGE,
+                    AppConfig.SPLASH_ALERT_DEF_CONFIRM};
 
         return GetStringArray(activityName,
-                              activity.getBaseContext(),
-                              prefs[AppConfig.PREF_LANGUAGE_INDEX].toString(),
-                              activityStringNum);
+                activity.getBaseContext(),
+                prefs[AppConfig.PREF_LANGUAGE_INDEX].toString(),
+                activityStringNum);
     }
 
     public static String[] GetStringArray(ComponentName name,
                                           Context context,
                                           String language,
-                                          int size){
+                                          int size) {
         String arrName = null;
 
-        switch(name){
+        switch (name) {
             case Splashscreen:
                 arrName = "splash_".concat(language);
                 break;
@@ -356,7 +342,7 @@ public class Language {
         }
 
         String[] strArray = null;
-        if(size != 0 && arrName != null){
+        if (size != 0 && arrName != null) {
             strArray = context.getResources().getStringArray(Utility.GetResId(arrName, array.class));
             strArray = strArray.length != size ? null : strArray;
         }

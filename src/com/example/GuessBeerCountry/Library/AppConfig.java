@@ -157,4 +157,7 @@ public class AppConfig {
     public static int ABOUT_BACK_INDEX = 3;
     public static String ABOUT_BACK_DEF = "Back";
 
+    // FONT
+    public static String FONT_PATH = "font/handwritten.ttf";
+
 }

@@ -1,11 +1,11 @@
 package com.example.GuessBeerCountry.Activity;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.actionbarsherlock.app.SherlockActivity;
 import com.example.GuessBeerCountry.Library.ActivityName;
 import com.example.GuessBeerCountry.Library.AppConfig;
 import com.example.GuessBeerCountry.Library.Language;
@@ -15,14 +15,14 @@ import com.example.GuessBeerCountry.R;
 /**
  * Created by Alberto Tosi Brandi on 05/10/2014.
  */
-public class SplashScreen extends Activity {
-    private static ImageView logo;
+public class SplashScreen extends SherlockActivity {
     public static TextView Loading;
     public static DatabaseHelper DatabaseHelper;
+    private static ImageView logo;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        try{
+        try {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.splashscreen);
 
@@ -38,15 +38,15 @@ public class SplashScreen extends Activity {
             DatabaseHelper = new NewDatabaseHelper(this.getBaseContext());
             new LoadingTaskConn(this.getApplicationContext(), this).execute(DatabaseHelper);
 
-        }catch(Exception ex){
+        } catch (Exception ex) {
             showAlertMessage();
         }
     }
 
-    private void showAlertMessage(){
+    private void showAlertMessage() {
         String[] message = Language.GetAlertStrings(this,
-                                                    ActivityName.Splashscreen,
-                                                    AppConfig.SPLASH_ALERT_MESSAGE);
+                ActivityName.Splashscreen,
+                AppConfig.SPLASH_ALERT_MESSAGE);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(message[AppConfig.SPLASH_ALERT_TITLE_INDEX])
