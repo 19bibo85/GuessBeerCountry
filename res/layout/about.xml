@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scroll_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#FFFFFF">
+
+    <LinearLayout
+            style="@style/linear_layout"
+            android:padding="10dp">
+
+        <ImageView
+                android:id="@+id/logo"
+                style="@style/logo"
+                android:layout_margin="5dp"
+                android:contentDescription="@+id/image_plate" />
+
+        <TextView
+                android:id="@+id/lab_version"
+                style="@style/main_text_view"
+                android:layout_marginTop="5dp"
+                android:paddingTop="5dp"
+                android:textSize="18sp"
+                android:layout_gravity="left"
+                android:gravity="center_horizontal"
+                android:background="@android:color/transparent"
+                android:text="@+id/lab_version" />
+
+        <TextView
+                android:id="@+id/version"
+                style="@style/main_text_view"
+                android:layout_marginTop="0dp"
+                android:paddingTop="5dp"
+                android:textSize="16sp"
+                android:gravity="center_horizontal"
+                android:background="@android:color/transparent"
+                android:textStyle="normal"
+                android:text="@+id/version"/>
+
+        <TextView
+                android:id="@+id/lab_developer"
+                style="@style/main_text_view"
+                android:layout_marginTop="5dp"
+                android:paddingTop="5dp"
+                android:textSize="18sp"
+                android:layout_gravity="left"
+                android:gravity="center_horizontal"
+                android:background="@android:color/transparent"
+                android:text="@+id/lab_developer" />
+
+        <TextView
+                android:id="@+id/developer"
+                style="@style/main_text_view"
+                android:layout_marginTop="0dp"
+                android:paddingTop="5dp"
+                android:textSize="16sp"
+                android:gravity="center_horizontal"
+                android:background="@android:color/transparent"
+                android:textStyle="normal"
+                android:text="@+id/developer"/>
+
+        <TextView
+                android:id="@+id/lab_acknowledge"
+                style="@style/main_text_view"
+                android:layout_marginTop="5dp"
+                android:paddingTop="5dp"
+                android:textSize="18sp"
+                android:layout_gravity="left"
+                android:gravity="center_horizontal"
+                android:background="@android:color/transparent"
+                android:text="@+id/lab_acknowledge" />
+
+        <TextView
+                android:id="@+id/acknowledge"
+                style="@style/main_text_view"
+                android:layout_marginTop="0dp"
+                android:paddingTop="5dp"
+                android:textSize="16sp"
+                android:gravity="center_horizontal"
+                android:background="@android:color/transparent"
+                android:textStyle="normal"
+                android:text="@+id/acknowledge"/>
+
+        <Button
+                android:id="@+id/back"
+                style="@style/button"
+                android:layout_marginTop="7dp"
+                android:textSize="16sp"
+                android:text="@+id/back" />
+    </LinearLayout>
+</ScrollView>

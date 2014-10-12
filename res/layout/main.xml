@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scroll_view"
+        style="@style/scroll_view">
+
+    <LinearLayout
+            android:id="@+id/Main"
+            style="@style/linear_layout"
+            android:padding="10dp">
+
+        <Button
+                android:id="@+id/start"
+                style="@style/button"
+                android:layout_marginTop="7dp"
+                android:textSize="16sp"
+                android:text="@+id/start" />
+
+        <Button
+                android:id="@+id/best_score"
+                style="@style/button"
+                android:layout_marginTop="7dp"
+                android:textSize="16sp"
+                android:text="@+id/best_score" />
+
+        <Button
+                android:id="@+id/list"
+                style="@style/button"
+                android:layout_marginTop="7dp"
+                android:textSize="16sp"
+                android:text="@+id/list" />
+
+        <Button
+                android:id="@+id/setting"
+                style="@style/button"
+                android:layout_marginTop="7dp"
+                android:textSize="16sp"
+                android:text="@+id/setting" />
+
+        <!--<com.inmobi.monetization.IMBanner-->
+                <!--android:id="@+id/adView"-->
+                <!--style="@style/inmobi_ad"-->
+                <!--adSize="15"-->
+                <!--appId="47fdaff06b1c4a608814ddb615a3f064" />-->
+    </LinearLayout>
+</ScrollView>
