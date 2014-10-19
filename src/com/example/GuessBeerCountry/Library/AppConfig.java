@@ -156,6 +156,27 @@ public class AppConfig {
     // Back index and name
     public static int ABOUT_BACK_INDEX = 3;
     public static String ABOUT_BACK_DEF = "Back";
+    // Retrieve
+    public static int ABOUT_RETRIEVE_SIZE = 3;
+    // Version default value
+    public static int ABOUT_RETRIEVE_VERSION_INDEX = 0;
+    public static String ABOUT_RETRIEVE_VERSION_DEF = "0";
+    // Build default value
+    public static int ABOUT_RETRIEVE_BUILD_INDEX = 1;
+    public static String ABOUT_RETRIEVE_BUILD_DEF = "0";
+    // Developer default value
+    public static int ABOUT_RETRIEVE_DEVELOPER_INDEX = 2;
+    public static String ABOUT_RETRIEVE_DEVELOPER_DEF = "Alberto Tosi Brandi";
+
+    // ACKNOWLEDGE
+    public static int ACKNOWLEDGE_LANGUAGE_SIZE = 1;
+    // Acknowledge index and name
+    public static int ACKNOWLEDGE_VERSION_INDEX = 0;
+    public static String ACKNOWLEDGE_VERSION_DEF = " The realization of this game has been made \n" +
+            " with non-profit purpose and the sole purpose of entertainment. \n" +
+            " Any reference to people or things is purely coincidental. \n" +
+            " We thank also the following sites for the material \n" +
+            " provided from which was inspired by the graphic design. \n \n";
 
     // FONT
     public static String FONT_PATH = "font/handwritten.ttf";

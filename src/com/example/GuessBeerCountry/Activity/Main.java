@@ -103,7 +103,7 @@ public class Main extends SherlockActivity {
     public void onResume(){
         super.onResume();
         Utility.InitializeAudio(this);
-        Utility.SetTransition(this, ComponentName.Main);
+        Utility.SetTransition(ComponentName.Main, this);
 
         // Set the theme and the language
         Object[] sharedPreference = Utility.GetSharedPreference(this);

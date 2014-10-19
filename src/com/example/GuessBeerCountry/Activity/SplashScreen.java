@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.actionbarsherlock.app.SherlockActivity;
-import com.example.GuessBeerCountry.Library.ActivityName;
 import com.example.GuessBeerCountry.Library.AppConfig;
+import com.example.GuessBeerCountry.Library.ComponentName;
 import com.example.GuessBeerCountry.Library.Language;
 import com.example.GuessBeerCountry.Library.Utility;
 import com.example.GuessBeerCountry.R;
@@ -28,11 +28,11 @@ public class SplashScreen extends SherlockActivity {
 
             // Logo
             logo = (ImageView) findViewById(R.id.logo);
-            Utility.ScaleSizeForTablet(this.getBaseContext(), logo);
+            Utility.ScaleSizeForTablet(this, logo);
 
             // Loading
             Loading = (TextView) findViewById(R.id.loading);
-            Language.SetLanguage(ActivityName.Splashscreen, this);
+            Language.SetLanguage(ComponentName.Splashscreen, this);
 
             // Setting a new instance of Database
             DatabaseHelper = new NewDatabaseHelper(this.getBaseContext());
@@ -45,7 +45,7 @@ public class SplashScreen extends SherlockActivity {
 
     private void showAlertMessage() {
         String[] message = Language.GetAlertStrings(this,
-                ActivityName.Splashscreen,
+                ComponentName.Splashscreen,
                 AppConfig.SPLASH_ALERT_MESSAGE);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

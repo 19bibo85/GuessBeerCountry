@@ -1,7 +1,6 @@
 package com.example.GuessBeerCountry.Library;
 
 import android.annotation.TargetApi;
-import android.content.Context;
 import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.graphics.Typeface;
@@ -26,7 +25,7 @@ public class Utility {
 
     }
 
-    public static void SetTransition(SherlockActivity activity, ComponentName name) {
+    public static void SetTransition(ComponentName name, SherlockActivity activity) {
 
     }
 
@@ -71,8 +70,8 @@ public class Utility {
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
-    public static void ScaleSizeForTablet(Context ctx, ImageView image) {
-        Configuration config = ctx.getResources().getConfiguration();
+    public static void ScaleSizeForTablet(SherlockActivity activity, ImageView image) {
+        Configuration config = activity.getBaseContext().getResources().getConfiguration();
         if (config.smallestScreenWidthDp >= AppConfig.TABLET_SCREEN_WIDTH) {
             image.setScaleX(AppConfig.TABLET_SCALE);
             image.setScaleY(AppConfig.TABLET_SCALE);

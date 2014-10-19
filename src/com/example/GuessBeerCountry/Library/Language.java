@@ -107,7 +107,7 @@ public class Language {
         TextView allPlates = ((Start) activity).AllPlates;
         allPlates.setText(AppConfig.START_ALL_PLATES_DEF);
 
-        TextView noFaults = ((Start) activity).NoFaults;
+        TextView noFaults = ((Start) activity).NoFault;
         noFaults.setText(AppConfig.START_NO_FAULTS_DEF);
 
         TextView timeLimits = ((Start) activity).TimeLimits;
@@ -272,6 +272,20 @@ public class Language {
         }
     }
 
+    public static String[] GetAcknowledgeStrings(SherlockActivity activity,
+                                                 ComponentName activityName,
+                                                 int activityStringNum) {
+
+        Object[] prefs = Utility.GetSharedPreference(activity);
+        if (prefs.length != AppConfig.PREFERENCE)
+            return new String[]{AppConfig.ACKNOWLEDGE_VERSION_DEF};
+
+        return GetStringArray(activityName,
+                activity.getBaseContext(),
+                prefs[AppConfig.PREF_LANGUAGE_INDEX].toString(),
+                activityStringNum);
+    }
+
     public static String[] GetAlertStrings(SherlockActivity activity,
                                            ComponentName activityName,
                                            int activityStringNum) {
@@ -337,6 +351,10 @@ public class Language {
                 break;
             case About:
                 arrName = "about_".concat(language);
+                break;
+            case Acknowledge:
+                arrName = "acknowledgements_".concat(language);
+                break;
             default:
                 break;
         }

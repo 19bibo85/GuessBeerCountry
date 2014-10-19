@@ -18,5 +18,6 @@ public enum ComponentName {
     MainStats,
     Stats,
     StatsList,
-    About
+    About,
+    Acknowledge
 }
