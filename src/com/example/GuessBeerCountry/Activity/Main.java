@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.ScrollView;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
+import com.example.GuessBeerCountry.Database.DatabaseHelper;
 import com.example.GuessBeerCountry.Library.*;
 import com.example.GuessBeerCountry.R;
 
@@ -149,10 +150,10 @@ public class Main extends SherlockActivity {
         DatabaseHelper databaseHelper = Utility.GetDataBaseHelper(this);
         switch(name){
             case BestScore:
-                new Score(this).execute(databaseHelper);
+                new ScoreAsync(this).execute(databaseHelper);
                 break;
             case About:
-                new AboutAsyncTask(this).execute(databaseHelper);
+                new AboutAsync(this).execute(databaseHelper);
                 break;
             default:
                 break;

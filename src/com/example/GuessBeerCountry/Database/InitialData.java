@@ -35,6 +35,10 @@ public class InitialData {
 
     }
 
+    public static void InsertContinent2Area(SQLiteDatabase db) {
+
+    }
+
     public static void InsertArea(SQLiteDatabase db) {
 
     }

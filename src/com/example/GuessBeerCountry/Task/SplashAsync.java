@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.CountDownTimer;
+import android.preference.PreferenceManager;
 import android.view.Gravity;
 import android.view.Window;
 import android.widget.Toast;
@@ -43,12 +44,6 @@ public class SplashAsync extends AsyncTask<DatabaseHelper, Integer, ServerError>
     private DatabaseHelper databaseHelper;
     private SQLiteDatabase db;
 
-    /**
-     * A Loading task that will load some resources that are necessary for the app to start
-     *
-     * @param progressBar      - the progress bar you want to update while the task is in progress
-     * @param finishedListener - the listener that will be told when this task is finished
-     */
     public SplashAsync(SplashScreen activity) {
         this.context = activity.getBaseContext();
         this.activity = activity;
@@ -115,11 +110,11 @@ public class SplashAsync extends AsyncTask<DatabaseHelper, Integer, ServerError>
                 // Setting all the default setting values
                 SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
                 SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putString(Preferences.LANGUAGE.toString(), Locale.getDefault().getLanguage());
-                editor.putString(Preferences.THEME.toString(), "Theme 1");
-                editor.putString(Preferences.RANGE.toString(), "Europe");
-                editor.putBoolean(Preferences.UPDATE.toString(), true);
-                editor.putBoolean(Preferences.SOUND.toString(), false);
+                editor.putString(PreferenceName.Language.toString(), Locale.getDefault().getLanguage());
+                editor.putString(PreferenceName.Theme.toString(), "Theme 1");
+                editor.putString(PreferenceName.Range.toString(), "Europe");
+                editor.putBoolean(PreferenceName.Update.toString(), true);
+                editor.putBoolean(PreferenceName.Sound.toString(), false);
                 editor.commit();
 
                 // Insert Build
@@ -132,6 +127,8 @@ public class SplashAsync extends AsyncTask<DatabaseHelper, Integer, ServerError>
                 InitialData.InsertType(db);
                 // Insert Continent
                 InitialData.InsertContinent(db);
+                // Insert Continent2Area
+                InitialData.InsertContinent2Area(db);
                 // InsertArea
                 InitialData.InsertArea(db);
                 // InsertScore
@@ -367,42 +364,45 @@ public class SplashAsync extends AsyncTask<DatabaseHelper, Integer, ServerError>
 
         if (objJS.equals(WebConf.JSON_OBJECTS[0])) {
 
-            serverVersion = jsObj.getInt(WebConf.TAG_BUILD_VERSION);
-            columns = new String[]{Database.BUILD[3]};
+            serverVersion = jsObj.getInt(WebConf.TAG_BUILD_DATE);
+            columns = new String[]{Database.BUILD[4]};
 
             // Settings the values to insert or update
-            values.put(Database.BUILD[1], jsObj.getInt(WebConf.TAG_BUILD_NUMBER));
-            values.put(Database.BUILD[2], jsObj.getString(WebConf.TAG_BUILD_NAME));
-            values.put(Database.BUILD[3], serverVersion);
-            values.put(Database.BUILD[4], jsObj.getString(WebConf.TAG_BUILD_DEVELOPER));
+            values.put(Database.BUILD[1], jsObj.getInt(WebConf.TAG_BUILD_NAME));
+            values.put(Database.BUILD[2], jsObj.getString(WebConf.TAG_BUILD_NUMBER));
+            values.put(Database.BUILD[3], jsObj.getString(WebConf.TAG_BUILD_DEVELOPER));
+            values.put(Database.BUILD[4], jsObj.getString(WebConf.TAG_BUILD_DATE));
+
         } else if (objJS.equals(WebConf.JSON_OBJECTS[1])) {
-            serverVersion = jsObj.getInt(WebConf.TAG_PLATE_VERSION);
-            columns = new String[]{Database.PLATE[5]};
+
+            serverVersion = jsObj.getInt(WebConf.TAG_NAME_DATE);
+            columns = new String[]{Database.NAME[5]};
             whereClause = "imgID = ?";
-            whereArgs = new String[]{jsObj.getString(WebConf.TAG_PLATE_IMG_ID)};
+            whereArgs = new String[]{jsObj.getString(WebConf.TAG_NAME_IMG_ID)};
 
             // Settings the values to insert or update
-            values.put(Database.PLATE[1], jsObj.getString(WebConf.TAG_PLATE_NAME));
-            values.put(Database.PLATE[2], jsObj.getString(WebConf.TAG_PLATE_IMG_ID));
-            values.put(Database.PLATE[3], jsObj.getString(WebConf.TAG_PLATE_COUNTRY));
-            values.put(Database.PLATE[4], jsObj.getInt(WebConf.TAG_PLATE_DIFFICULTY));
-            values.put(Database.PLATE[5], serverVersion);
-            values.put(Database.PLATE[6], jsObj.getString(WebConf.TAG_PLATE_CONTINENT));
+            values.put(Database.NAME[1], jsObj.getString(WebConf.TAG_NAME_IMG_ID));
+            values.put(Database.NAME[2], jsObj.getString(WebConf.TAG_NAME_NAME));
+            values.put(Database.NAME[3], jsObj.getString(WebConf.TAG_NAME_COUNTRY_CODE));
+            values.put(Database.NAME[4], jsObj.getInt(WebConf.TAG_NAME_TYPE_ID));
+            values.put(Database.NAME[5], jsObj.getInt(WebConf.TAG_NAME_DIFFICULTY));
+            values.put(Database.NAME[6], jsObj.getString(WebConf.TAG_NAME_DATE));
 
         } else if (objJS.equals(WebConf.JSON_OBJECTS[2])) {
-            serverVersion = jsObj.getInt(WebConf.TAG_LANGUAGE_VERSION);
+
+            serverVersion = jsObj.getInt(WebConf.TAG_COUNTRY_DATE);
             columns = new String[]{Database.LANG[2]};
             whereClause = "imgID = ?";
             whereArgs = new String[]{jsObj.getString(WebConf.TAG_LANGUAGE_IMG_ID)};
 
             // Settings the values to insert or update
-            values.put(Database.LANG[1], jsObj.getString(WebConf.TAG_LANGUAGE_IMG_ID));
-            values.put(Database.LANG[2], serverVersion);
-            values.put(Database.LANG[3], jsObj.getString(WebConf.TAG_LANGUAGE_ENGLISH));
-            values.put(Database.LANG[4], jsObj.getString(WebConf.TAG_LANGUAGE_ITALIAN));
-            values.put(Database.LANG[5], jsObj.getString(WebConf.TAG_LANGUAGE_SPANISH));
-            values.put(Database.LANG[6], jsObj.getString(WebConf.TAG_LANGUAGE_FRENCH));
-            values.put(Database.LANG[7], jsObj.getString(WebConf.TAG_LANGUAGE_PORTUGUESE));
+            values.put(Database.COUNTRY[1], jsObj.getString(WebConf.TAG_LANGUAGE_IMG_ID));
+            values.put(Database.COUNTRY[2], serverVersion);
+            values.put(Database.COUNTRY[3], jsObj.getString(WebConf.TAG_LANGUAGE_ENGLISH));
+            values.put(Database.COUNTRY[4], jsObj.getString(WebConf.TAG_LANGUAGE_ITALIAN));
+            values.put(Database.COUNTRY[5], jsObj.getString(WebConf.TAG_LANGUAGE_SPANISH));
+            values.put(Database.COUNTRY[6], jsObj.getString(WebConf.TAG_LANGUAGE_FRENCH));
+            values.put(Database.COUNTRY[7], jsObj.getString(WebConf.TAG_LANGUAGE_PORTUGUESE));
 
             //Log.e("SERVER", "Portuguese translation: "+ jsObj.getString(WebConf.TAG_LANGUAGE_PORTUGUESE));
         }
