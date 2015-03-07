@@ -2,15 +2,18 @@ package com.example.GuessBeerCountry.Activity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.actionbarsherlock.app.SherlockActivity;
+import com.example.GuessBeerCountry.Database.DatabaseHelper;
 import com.example.GuessBeerCountry.Library.AppConfig;
 import com.example.GuessBeerCountry.Library.ComponentName;
 import com.example.GuessBeerCountry.Library.Language;
 import com.example.GuessBeerCountry.Library.Utility;
 import com.example.GuessBeerCountry.R;
+import com.example.GuessBeerCountry.Task.SplashAsync;
 
 /**
  * Created by Alberto Tosi Brandi on 05/10/2014.
@@ -35,8 +38,8 @@ public class SplashScreen extends SherlockActivity {
             Language.SetLanguage(ComponentName.Splashscreen, this);
 
             // Setting a new instance of Database
-            DatabaseHelper = new NewDatabaseHelper(this.getBaseContext());
-            new LoadingTaskConn(this.getApplicationContext(), this).execute(DatabaseHelper);
+            DatabaseHelper = new DatabaseHelper(this);
+            new SplashAsync(this).execute(DatabaseHelper);
 
         } catch (Exception ex) {
             showAlertMessage();
@@ -59,5 +62,14 @@ public class SplashScreen extends SherlockActivity {
 
         AlertDialog dialog = builder.create();
         dialog.show();
+    }
+
+    // This is the callback for when your async task has finished
+    public void onTaskFinished() {
+        Utility.InitializeAudio(this);
+        Intent intent = new Intent(SplashScreen.this, Main.class);
+        intent.putExtra("Transition", true);
+        startActivity(intent);
+        finish();
     }
 }

@@ -9,10 +9,7 @@ import android.widget.TextView;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.MenuItem;
-import com.example.GuessBeerCountry.Library.ComponentName;
-import com.example.GuessBeerCountry.Library.GameMode;
-import com.example.GuessBeerCountry.Library.Language;
-import com.example.GuessBeerCountry.Library.Utility;
+import com.example.GuessBeerCountry.Library.*;
 import com.example.GuessBeerCountry.R;
 
 import java.util.ArrayList;
@@ -29,7 +26,7 @@ public class Start extends SherlockActivity {
     public static TextView NoFault;
     public static TextView TimeLimits;
     public static TextView NoTimeLimits;
-    private NewDatabaseHelper databaseHelper;
+    private static DatabaseHelper databaseHelper;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -137,9 +134,6 @@ public class Start extends SherlockActivity {
     public void gameActivity(GameMode mode, Object obj) {
         if (obj instanceof ArrayList<?>) {
             Intent intent = new Intent(this, GameActivity.class);
-            //Log.e("GAME", "Arrivato1");
-            //intent.putExtra("Game", (ArrayList<Plate>) obj);
-            //Log.e("GAME", "Arrivato2");
             startActivity(intent);
         }
     }

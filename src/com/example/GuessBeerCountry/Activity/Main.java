@@ -7,10 +7,7 @@ import android.widget.Button;
 import android.widget.ScrollView;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
-import com.example.GuessBeerCountry.Library.AppConfig;
-import com.example.GuessBeerCountry.Library.ComponentName;
-import com.example.GuessBeerCountry.Library.Language;
-import com.example.GuessBeerCountry.Library.Utility;
+import com.example.GuessBeerCountry.Library.*;
 import com.example.GuessBeerCountry.R;
 
 /**
@@ -76,9 +73,9 @@ public class Main extends SherlockActivity {
                 }
             });
 
-            Title.SetTitle(ComponentName.Main, actionBar, this.getBaseContext());
+            Title.SetTitle(ComponentName.Main, actionBar, this);
             Language.SetLanguage(ComponentName.Main, this);
-            Theme.SetTheme(ComponentName.Main, this.getBaseContext());
+            Theme.SetTheme(ComponentName.Main, this);
 
             // Set the theme and the language
             Object[] sharedPreference = Utility.GetSharedPreference(this);
@@ -149,7 +146,7 @@ public class Main extends SherlockActivity {
     }
 
     private void executeAsyncTask(ComponentName name){
-        NewDatabaseHelper databaseHelper = Utility.GetDataBaseHelper(this.getBaseContext());
+        DatabaseHelper databaseHelper = Utility.GetDataBaseHelper(this);
         switch(name){
             case BestScore:
                 new Score(this).execute(databaseHelper);

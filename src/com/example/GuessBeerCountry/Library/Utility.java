@@ -9,6 +9,8 @@ import android.preference.PreferenceManager;
 import android.widget.ImageView;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
+import com.example.GuessBeerCountry.Activity.SplashScreen;
+import com.example.GuessBeerCountry.Database.DatabaseHelper;
 
 import java.lang.reflect.Field;
 
@@ -76,5 +78,13 @@ public class Utility {
             image.setScaleX(AppConfig.TABLET_SCALE);
             image.setScaleY(AppConfig.TABLET_SCALE);
         }
+    }
+
+    // Return the database helper
+    public static DatabaseHelper GetDataBaseHelper(SherlockActivity activity) {
+        DatabaseHelper databaseHelper = SplashScreen.DatabaseHelper;
+        if (databaseHelper == null)
+            databaseHelper = new DatabaseHelper(activity);
+        return databaseHelper;
     }
 }

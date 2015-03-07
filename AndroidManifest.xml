@@ -17,5 +17,11 @@
         <activity android:name=".Activity.Score"/>
         <activity android:name=".Activity.StatsList"/>
         <activity android:name=".Activity.About"/>
+        <activity android:name=".Activity.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
     </application>
 </manifest>

@@ -24,6 +24,15 @@ public class AppConfig {
     public static int PREF_SOUND_INDEX = 4;
     public static boolean PREF_SOUND_DEF = true;
 
+    // THEME
+    public static String THEME_FIRST = "Theme 1";
+    public static String THEME_SECOND = "Theme 2";
+    public static String THEME_THIRD = "Theme 3";
+    public static String THEME_FOURTH = "Theme 4";
+    public static String THEME_FIFTH = "Theme 5";
+    public static int THEME_SIZE = 2;
+    public static int THEME_BACKGROUND = 0;
+    public static int THEME_BUTTON = 1;
 
     // SPLASH SCREEN ALERT
     public static int SPLASH_ALERT_MESSAGE = 3;
