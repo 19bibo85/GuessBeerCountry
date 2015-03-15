@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
  */
 public class Database {
     // Database tables
-    public static final String[] TABLES = {"build", "name", "country", "type", "continent", "area", "continent2area", "score", "statistics"};
+    public static final String[] TABLES = {"build", "name", "country", "type", "continent", "area", "score", "statistics"};
 
     public static final String[] BUILD = {"_id", "name", "number", "developer", "dtModified"};
     private static final String DATABASE_CREATE_BUILD =
@@ -37,68 +37,55 @@ public class Database {
                     + ");";
 
 
-    public static final String[] COUNTRY = {"_id", "countryCode", "areaCode", "en", "it", "es", "fr", "pt", "dtModified"};
+    public static final String[] COUNTRY = {"countryCode", "areaCode", "en", "it", "es", "fr", "pt", "dtModified"};
     private static final String DATABASE_CREATE_COUNTRY =
             " CREATE TABLE "
                     + TABLES[2]
                     + "("
-                    + COUNTRY[0] + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                    + COUNTRY[1] + " INTEGER NOT NULL, "
-                    + COUNTRY[2] + " INTEGER NOT NULL,"
+                    + COUNTRY[0] + " INTEGER PRIMARY KEY, "
+                    + COUNTRY[1] + " INTEGER NOT NULL,"
+                    + COUNTRY[2] + " TEXT NOT NULL, "
                     + COUNTRY[3] + " TEXT NOT NULL, "
                     + COUNTRY[4] + " TEXT NOT NULL, "
                     + COUNTRY[5] + " TEXT NOT NULL, "
                     + COUNTRY[6] + " TEXT NOT NULL, "
-                    + COUNTRY[7] + " TEXT NOT NULL, "
-                    + COUNTRY[8] + " DATETIME NOT NULL "
+                    + COUNTRY[7] + " DATETIME NOT NULL "
                     + ")";
 
 
-    public static final String[] TYPE = {"_id", "typeID", "name", "dtModified"};
+    public static final String[] TYPE = {"typeID", "name", "dtModified"};
     private static final String DATABASE_CREATE_TYPE =
             " CREATE TABLE "
                     + TABLES[3]
                     + "("
-                    + TYPE[0] + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                    + TYPE[0] + " INTEGER PRIMARY KEY, "
                     + TYPE[1] + " INTEGER NOT NULL, "
                     + TYPE[2] + " TEXT NOT NULL, "
                     + TYPE[3] + " DATETIME NOT NULL "
                     + ");";
 
 
-    public static final String[] CONTINENT = {"_id", "continentCode", "en", "it", "es", "fr", "pt", "dtModified"};
+    public static final String[] CONTINENT = {"continentCode", "en", "it", "es", "fr", "pt", "dtModified"};
     private static final String DATABASE_CREATE_CONTINENT =
             " CREATE TABLE "
                     + TABLES[4]
                     + "("
-                    + CONTINENT[0] + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                    + CONTINENT[1] + " INTEGER NOT NULL, "
+                    + CONTINENT[0] + " INTEGER PRIMARY KEY, "
+                    + CONTINENT[1] + " TEXT NOT NULL, "
                     + CONTINENT[2] + " TEXT NOT NULL, "
                     + CONTINENT[3] + " TEXT NOT NULL, "
-                    + CONTINENT[4] + " TEXT NOT NULL, "
-                    + CONTINENT[5] + " TEXT NOT NULL "
-                    + CONTINENT[6] + " TEXT NOT NULL, "
-                    + CONTINENT[7] + " DATETIME NOT NULL "
-                    + ");";
-
-    public static final String[] CONTINENT_2_AREA = {"_id", "continentCode", "areaCode", "dtModified"};
-    private static final String DATABASE_CREATE_CONTINENT_2_AREA =
-            " CREATE TABLE "
-                    + TABLES[5]
-                    + "("
-                    + CONTINENT_2_AREA[0] + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                    + CONTINENT_2_AREA[1] + " INTEGER NOT NULL, "
-                    + CONTINENT_2_AREA[2] + " INTEGER NOT NULL, "
-                    + CONTINENT_2_AREA[3] + " DATETIME NOT NULL "
+                    + CONTINENT[4] + " TEXT NOT NULL "
+                    + CONTINENT[5] + " TEXT NOT NULL, "
+                    + CONTINENT[6] + " DATETIME NOT NULL "
                     + ");";
 
 
-    public static final String[] AREA = {"_id", "areaCode", "en", "it", "es", "fr", "pt", "dtModified"};
+    public static final String[] AREA = {"areaCode", "continentCode", "en", "it", "es", "fr", "pt", "dtModified"};
     private static final String DATABASE_CREATE_AREA =
             " CREATE TABLE "
                     + TABLES[5]
                     + "("
-                    + AREA[0] + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                    + AREA[0] + " INTEGER PRIMARY KEY, "
                     + AREA[1] + " INTEGER NOT NULL, "
                     + AREA[2] + " TEXT NOT NULL, "
                     + AREA[3] + " TEXT NOT NULL, "
@@ -141,7 +128,6 @@ public class Database {
         database.execSQL(DATABASE_CREATE_COUNTRY);
         database.execSQL(DATABASE_CREATE_TYPE);
         database.execSQL(DATABASE_CREATE_CONTINENT);
-        database.execSQL(DATABASE_CREATE_CONTINENT_2_AREA);
         database.execSQL(DATABASE_CREATE_AREA);
         database.execSQL(DATABASE_CREATE_SCORE);
         database.execSQL(DATABASE_CREATE_STATS);

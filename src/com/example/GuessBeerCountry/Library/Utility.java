@@ -13,6 +13,7 @@ import com.example.GuessBeerCountry.Activity.SplashScreen;
 import com.example.GuessBeerCountry.Database.DatabaseHelper;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 /**
  * Created by Alberto Tosi Brandi on 05/10/2014.
@@ -86,5 +87,16 @@ public class Utility {
         if (databaseHelper == null)
             databaseHelper = new DatabaseHelper(activity);
         return databaseHelper;
+    }
+
+    // Copy array values to list
+    public static ArrayList<String> CopyArrayToList(String[] info) {
+        ArrayList<String> obj = new ArrayList<String>();
+        if (info != null && info.length > 0) {
+            for (int i = 0; i < info.length; i++) {
+                obj.add(info[i]);
+            }
+        }
+        return obj;
     }
 }

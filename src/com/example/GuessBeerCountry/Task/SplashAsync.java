@@ -141,7 +141,6 @@ public class SplashAsync extends AsyncTask<DatabaseHelper, Integer, ServerError>
         }
     }
 
-
     private ServerError updateDatabase() {
         // Updating, passing the connection to the db, the DB records in the tables(build, plate and language)
         return updateDatabase(WebConf.DB_CONN, WebConf.JSON_OBJECTS, WebConf.DEFAULT_VERSION);
@@ -282,7 +281,7 @@ public class SplashAsync extends AsyncTask<DatabaseHelper, Integer, ServerError>
         //InputStream content;
         try {
                     /*
-					content = entity.getContent();
+                    content = entity.getContent();
 					BufferedReader reader = new BufferedReader(	new InputStreamReader(content, "UTF-8"), 8000);
 					String line;
 
@@ -371,12 +370,12 @@ public class SplashAsync extends AsyncTask<DatabaseHelper, Integer, ServerError>
             values.put(Database.BUILD[1], jsObj.getInt(WebConf.TAG_BUILD_NAME));
             values.put(Database.BUILD[2], jsObj.getString(WebConf.TAG_BUILD_NUMBER));
             values.put(Database.BUILD[3], jsObj.getString(WebConf.TAG_BUILD_DEVELOPER));
-            values.put(Database.BUILD[4], jsObj.getString(WebConf.TAG_BUILD_DATE));
+            values.put(Database.BUILD[4], serverVersion);
 
         } else if (objJS.equals(WebConf.JSON_OBJECTS[1])) {
 
             serverVersion = jsObj.getInt(WebConf.TAG_NAME_DATE);
-            columns = new String[]{Database.NAME[5]};
+            columns = new String[]{Database.NAME[6]};
             whereClause = "imgID = ?";
             whereArgs = new String[]{jsObj.getString(WebConf.TAG_NAME_IMG_ID)};
 
@@ -386,28 +385,70 @@ public class SplashAsync extends AsyncTask<DatabaseHelper, Integer, ServerError>
             values.put(Database.NAME[3], jsObj.getString(WebConf.TAG_NAME_COUNTRY_CODE));
             values.put(Database.NAME[4], jsObj.getInt(WebConf.TAG_NAME_TYPE_ID));
             values.put(Database.NAME[5], jsObj.getInt(WebConf.TAG_NAME_DIFFICULTY));
-            values.put(Database.NAME[6], jsObj.getString(WebConf.TAG_NAME_DATE));
+            values.put(Database.NAME[6], serverVersion);
 
         } else if (objJS.equals(WebConf.JSON_OBJECTS[2])) {
 
             serverVersion = jsObj.getInt(WebConf.TAG_COUNTRY_DATE);
-            columns = new String[]{Database.LANG[2]};
-            whereClause = "imgID = ?";
-            whereArgs = new String[]{jsObj.getString(WebConf.TAG_LANGUAGE_IMG_ID)};
+            columns = new String[]{Database.COUNTRY[7]};
+            whereClause = "countryCode = ?";
+            whereArgs = new String[]{jsObj.getString(WebConf.TAG_COUNTRY_CODE)};
 
             // Settings the values to insert or update
-            values.put(Database.COUNTRY[1], jsObj.getString(WebConf.TAG_LANGUAGE_IMG_ID));
-            values.put(Database.COUNTRY[2], serverVersion);
-            values.put(Database.COUNTRY[3], jsObj.getString(WebConf.TAG_LANGUAGE_ENGLISH));
-            values.put(Database.COUNTRY[4], jsObj.getString(WebConf.TAG_LANGUAGE_ITALIAN));
-            values.put(Database.COUNTRY[5], jsObj.getString(WebConf.TAG_LANGUAGE_SPANISH));
-            values.put(Database.COUNTRY[6], jsObj.getString(WebConf.TAG_LANGUAGE_FRENCH));
-            values.put(Database.COUNTRY[7], jsObj.getString(WebConf.TAG_LANGUAGE_PORTUGUESE));
+            values.put(Database.COUNTRY[0], jsObj.getInt(WebConf.TAG_COUNTRY_CODE));
+            values.put(Database.COUNTRY[1], jsObj.getInt(WebConf.TAG_COUNTRY_AREA_CODE));
+            values.put(Database.COUNTRY[2], jsObj.getString(WebConf.TAG_COUNTRY_ENGLISH));
+            values.put(Database.COUNTRY[3], jsObj.getString(WebConf.TAG_COUNTRY_ITALIAN));
+            values.put(Database.COUNTRY[4], jsObj.getString(WebConf.TAG_COUNTRY_SPANISH));
+            values.put(Database.COUNTRY[5], jsObj.getString(WebConf.TAG_COUNTRY_FRENCH));
+            values.put(Database.COUNTRY[6], jsObj.getString(WebConf.TAG_COUNTRY_PORTUGUESE));
+            values.put(Database.COUNTRY[7], serverVersion);
 
-            //Log.e("SERVER", "Portuguese translation: "+ jsObj.getString(WebConf.TAG_LANGUAGE_PORTUGUESE));
+        } else if (objJS.equals(WebConf.JSON_OBJECTS[3])) {
+
+            serverVersion = jsObj.getInt(WebConf.TAG_TYPE_DATE);
+            columns = new String[]{Database.TYPE[2]};
+            whereClause = "typeId = ?";
+            whereArgs = new String[]{jsObj.getString(WebConf.TAG_TYPE_ID)};
+
+            // Settings the values to insert or update
+            values.put(Database.TYPE[0], jsObj.getInt(WebConf.TAG_TYPE_ID));
+            values.put(Database.TYPE[1], jsObj.getString(WebConf.TAG_TYPE_NAME));
+            values.put(Database.TYPE[2], jsObj.getString(WebConf.TAG_TYPE_DATE));
+
+        } else if (objJS.equals(WebConf.JSON_OBJECTS[4])) {
+
+            serverVersion = jsObj.getInt(WebConf.TAG_CONTINENT_DATE);
+            columns = new String[]{Database.CONTINENT[6]};
+            whereClause = "continentCode = ?";
+            whereArgs = new String[]{jsObj.getString(WebConf.TAG_CONTINENT_DATE)};
+
+            // Settings the values to insert or update
+            values.put(Database.CONTINENT[0], jsObj.getInt(WebConf.TAG_CONTINENT_CODE));
+            values.put(Database.CONTINENT[1], jsObj.getString(WebConf.TAG_CONTINENT_ENGLISH));
+            values.put(Database.CONTINENT[2], jsObj.getString(WebConf.TAG_CONTINENT_ITALIAN));
+            values.put(Database.CONTINENT[3], jsObj.getString(WebConf.TAG_CONTINENT_SPANISH));
+            values.put(Database.CONTINENT[4], jsObj.getString(WebConf.TAG_CONTINENT_FRENCH));
+            values.put(Database.CONTINENT[5], jsObj.getString(WebConf.TAG_CONTINENT_PORTUGUESE));
+            values.put(Database.CONTINENT[6], serverVersion);
+
+        } else if (objJS.equals(WebConf.JSON_OBJECTS[5])) {
+
+            serverVersion = jsObj.getInt(WebConf.TAG_AREA_DATE);
+            columns = new String[]{Database.CONTINENT[6]};
+            whereClause = "arCode = ?";
+            whereArgs = new String[]{jsObj.getString(WebConf.TAG_CONTINENT_DATE)};
+
+            // Settings the values to insert or update
+            values.put(Database.CONTINENT[0], jsObj.getInt(WebConf.TAG_CONTINENT_CODE));
+            values.put(Database.CONTINENT[1], jsObj.getString(WebConf.TAG_CONTINENT_ENGLISH));
+            values.put(Database.CONTINENT[2], jsObj.getString(WebConf.TAG_CONTINENT_ITALIAN));
+            values.put(Database.CONTINENT[3], jsObj.getString(WebConf.TAG_CONTINENT_SPANISH));
+            values.put(Database.CONTINENT[4], jsObj.getString(WebConf.TAG_CONTINENT_FRENCH));
+            values.put(Database.CONTINENT[5], jsObj.getString(WebConf.TAG_CONTINENT_PORTUGUESE));
+            values.put(Database.CONTINENT[6], serverVersion);
         }
 
-        //Log.e("SERVER", "Insert or update values for: "+ objJS);
         // Inserting or updating the values just set
         result = insOrUpDB(jsObj, objJS, columns, whereClause, whereArgs, values, serverVersion);
 

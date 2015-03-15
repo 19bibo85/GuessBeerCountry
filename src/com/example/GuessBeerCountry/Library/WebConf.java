@@ -28,7 +28,7 @@ public class WebConf {
     public static final int STATUS_CODE = 200;
 
     // JSON objects mapped from the DB tables
-    public static final String[] JSON_OBJECTS = {"Build", "Name", "Country", "Type", "Continent", "continent2area", "Area", "Score", "Stats"};
+    public static final String[] JSON_OBJECTS = {"Build", "Name", "Country", "Type", "Continent", "Area", "Score", "Stats"};
 
     // Extension of the entity provided from the Online DB
     public static final String[] EXSTENSION = {"json"};
@@ -65,18 +65,13 @@ public class WebConf {
     public static final String TAG_TYPE_DATE = "dtModified";
 
     // JSON Tags for Continent
-    public static final String TAG_CONTINENT_AREA_CODE = "continentCode";
+    public static final String TAG_CONTINENT_CODE = "continentCode";
     public static final String TAG_CONTINENT_ENGLISH = "en";
     public static final String TAG_CONTINENT_ITALIAN = "it";
     public static final String TAG_CONTINENT_SPANISH = "es";
     public static final String TAG_CONTINENT_FRENCH = "fr";
     public static final String TAG_CONTINENT_PORTUGUESE = "pt";
     public static final String TAG_CONTINENT_DATE = "dtModified";
-
-    // JSON Tags for Continent_2_Area
-    public static final String TAG_CONTINENT_2_AREA_CONTINENT_CODE = "continentCode";
-    public static final String TAG_CONTINENT_2_AREA_AREA_CODE = "areaCode";
-    public static final String TAG_CONTINENT_2_AREA_DATE = "dtModified";
 
     // JSON Tags for Area
     public static final String TAG_AREA_CODE = "areaCode";

@@ -10,9 +10,13 @@ import com.actionbarsherlock.app.SherlockActivity;
 import com.example.GuessBeerCountry.Database.DatabaseHelper;
 import com.example.GuessBeerCountry.Library.*;
 import com.example.GuessBeerCountry.R;
+import com.example.GuessBeerCountry.Task.AboutAsync;
+import com.example.GuessBeerCountry.Task.ScoreAsync;
+
+import java.util.ArrayList;
 
 /**
- * Created by Alberto Tosi Brandi on 07/10/2014.
+ * Created by Alberto Tosi Brandi on 07/10/201e4.
  */
 public class Main extends SherlockActivity {
     public static ScrollView ScrollView;
@@ -87,18 +91,18 @@ public class Main extends SherlockActivity {
 
             //IMBanner banner = (IMBanner) findViewById(R.id.adView);
             //banner.loadBanner();
-        }catch(Exception e){
+        } catch (Exception e) {
 
         }
     }
 
     @Override
-    public void onRestart(){
+    public void onRestart() {
         super.onRestart();
     }
 
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
         Utility.InitializeAudio(this);
         Utility.SetTransition(ComponentName.Main, this);
@@ -106,16 +110,13 @@ public class Main extends SherlockActivity {
         // Set the theme and the language
         Object[] sharedPreference = Utility.GetSharedPreference(this);
 
-        if(sharedPreference.length == AppConfig.PREFERENCE)
-        {
-            if(LanguageSelected != sharedPreference[AppConfig.PREF_LANGUAGE_INDEX])
-            {
+        if (sharedPreference.length == AppConfig.PREFERENCE) {
+            if (LanguageSelected != sharedPreference[AppConfig.PREF_LANGUAGE_INDEX]) {
                 LanguageSelected = (String) sharedPreference[AppConfig.PREF_LANGUAGE_INDEX];
                 Language.SetLanguage(ComponentName.Main, this);
             }
 
-            if(ThemeSelected != sharedPreference[AppConfig.PREF_THEME_INDEX])
-            {
+            if (ThemeSelected != sharedPreference[AppConfig.PREF_THEME_INDEX]) {
                 ThemeSelected = (String) sharedPreference[AppConfig.PREF_THEME_INDEX];
                 Intent intent = this.getIntent();
                 intent.putExtra("NoTransition", true);
@@ -135,20 +136,20 @@ public class Main extends SherlockActivity {
     @Override
     public boolean onOptionsItemSelected(com.actionbarsherlock.view.MenuItem item) {
         // Take appropriate action for each action item click
-        if(item.getItemId() == R.id.action_settings){
+        if (item.getItemId() == R.id.action_settings) {
             settingActivity();
             return true;
-        }else if(item.getItemId() == R.id.action_about){
+        } else if (item.getItemId() == R.id.action_about) {
             executeAsyncTask(ComponentName.About);
             return true;
-        }else{
+        } else {
             return super.onOptionsItemSelected(item);
         }
     }
 
-    private void executeAsyncTask(ComponentName name){
+    private void executeAsyncTask(ComponentName name) {
         DatabaseHelper databaseHelper = Utility.GetDataBaseHelper(this);
-        switch(name){
+        switch (name) {
             case BestScore:
                 new ScoreAsync(this).execute(databaseHelper);
                 break;
@@ -177,4 +178,14 @@ public class Main extends SherlockActivity {
         intent.putExtra("Transition", true);
         startActivity(intent);
     }
+
+    @SuppressWarnings("unchecked")
+    public void aboutActivity(Object obj) {
+        if (obj instanceof ArrayList<?>) {
+            Intent intent = new Intent(this, About.class);
+            intent.putStringArrayListExtra("About", (ArrayList<String>) obj);
+            startActivity(intent);
+        }
+    }
+
 }
