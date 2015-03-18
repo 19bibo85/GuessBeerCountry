@@ -78,9 +78,9 @@ public class Main extends SherlockActivity {
                 }
             });
 
-            Title.SetTitle(ComponentName.Main, actionBar, this);
-            Language.SetLanguage(ComponentName.Main, this);
-            Theme.SetTheme(ComponentName.Main, this);
+            Title.SetTitle(ComponentName.Main, actionBar, this.getBaseContext());
+            Language.SetLanguage(ComponentName.Main, this.getBaseContext());
+            Theme.SetTheme(ComponentName.Main, this.getBaseContext());
 
             // Set the theme and the language
             Object[] sharedPreference = Utility.GetSharedPreference(this);
@@ -174,7 +174,7 @@ public class Main extends SherlockActivity {
     }
 
     private void settingActivity() {
-        Intent intent = new Intent(this, SettingFragment.class);
+        Intent intent = new Intent(this, Setting.class);
         intent.putExtra("Transition", true);
         startActivity(intent);
     }

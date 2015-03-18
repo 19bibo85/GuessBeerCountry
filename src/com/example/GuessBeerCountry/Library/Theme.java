@@ -1,6 +1,6 @@
 package com.example.GuessBeerCountry.Library;
 
-import com.actionbarsherlock.app.SherlockActivity;
+import android.content.Context;
 import com.example.GuessBeerCountry.Activity.*;
 
 /**
@@ -8,31 +8,31 @@ import com.example.GuessBeerCountry.Activity.*;
  */
 public class Theme {
 
-    public static void SetTheme(ComponentName name, SherlockActivity activity) {
+    public static void SetTheme(ComponentName name, Context context) {
         switch (name) {
             case Main:
-                SetMainTheme(activity);
+                SetMainTheme(context);
                 break;
             case Start:
-                SetStartTheme(activity);
+                SetStartTheme(context);
                 break;
             case BestScore:
-                SetBestScoreTheme(activity);
+                SetBestScoreTheme(context);
                 break;
             case Setting:
-                SetSettingTheme(activity);
+                SetSettingTheme(context);
                 break;
             case Score:
-                SetScoreTheme(activity);
+                SetScoreTheme(context);
                 break;
             case Stats:
-                SetStatsTheme(activity);
+                SetStatsTheme(context);
                 break;
             case Game:
-                SetGameLayoutTheme(activity);
+                SetGameLayoutTheme(context);
                 break;
             case About:
-                SetAboutTheme(activity);
+                SetAboutTheme(context);
                 break;
             default:
                 break;
@@ -40,10 +40,10 @@ public class Theme {
         }
     }
 
-    private static int[] SetTheme(SherlockActivity activity) {
+    private static int[] SetTheme(Context context) {
         int[] appThemeColor = new int[]{0, 0};
 
-        Object[] prefs = Utility.GetSharedPreference(activity);
+        Object[] prefs = Utility.GetSharedPreference(context);
         if (prefs.length == AppConfig.PREFERENCE) {
             String theme = prefs[AppConfig.PREF_THEME_INDEX].toString();
 
@@ -69,8 +69,8 @@ public class Theme {
     }
 
     // Setting the theme colour for each button and background in MainActivity
-    private static void SetMainTheme(SherlockActivity activity) {
-        int[] appThemeColor = SetTheme(activity);
+    private static void SetMainTheme(Context context) {
+        int[] appThemeColor = SetTheme(context);
         if (appThemeColor.length == AppConfig.THEME_SIZE) {
             Main.ScrollView.setBackgroundResource(appThemeColor[AppConfig.THEME_BACKGROUND]);
             Main.Start.setBackgroundResource(appThemeColor[AppConfig.THEME_BUTTON]);
@@ -81,8 +81,8 @@ public class Theme {
     }
 
     // Setting the theme colour for each button and background in StartActivity
-    private static void SetStartTheme(SherlockActivity activity) {
-        int[] appThemeColor = SetTheme(activity);
+    private static void SetStartTheme(Context context) {
+        int[] appThemeColor = SetTheme(context);
         if (appThemeColor.length == AppConfig.THEME_SIZE) {
             Start.ScrollView.setBackgroundResource(appThemeColor[AppConfig.THEME_BACKGROUND]);
             Start.Easy.setBackgroundResource(appThemeColor[AppConfig.THEME_BUTTON]);
@@ -94,8 +94,8 @@ public class Theme {
     }
 
     // Setting the theme colour for each button and background in BestScoreActivity
-    private static void SetBestScoreTheme(SherlockActivity activity) {
-        int[] appThemeColor = SetTheme(activity);
+    private static void SetBestScoreTheme(Context context) {
+        int[] appThemeColor = SetTheme(context);
         if (appThemeColor.length == AppConfig.THEME_SIZE) {
             BestScore.ScrollView.setBackgroundResource(appThemeColor[AppConfig.THEME_BACKGROUND]);
             BestScore.Stats.setBackgroundResource(appThemeColor[AppConfig.THEME_BUTTON]);
@@ -103,12 +103,12 @@ public class Theme {
     }
 
     // Setting the theme colour for each button and background in SettingActivity
-    private static void SetSettingTheme(SherlockActivity activity) {
+    private static void SetSettingTheme(Context context) {
     }
 
     // Setting the theme colour for each button and background in ScoreActivity
-    private static void SetScoreTheme(SherlockActivity activity) {
-        int[] appThemeColor = SetTheme(activity);
+    private static void SetScoreTheme(Context context) {
+        int[] appThemeColor = SetTheme(context);
         if (appThemeColor.length == AppConfig.THEME_SIZE) {
             Score.ScrollView.setBackgroundResource(appThemeColor[AppConfig.THEME_BACKGROUND]);
             Score.Back.setBackgroundResource(appThemeColor[AppConfig.THEME_BUTTON]);
@@ -117,16 +117,16 @@ public class Theme {
     }
 
     // Setting the theme colour for each button and background in BestScoreActivity
-    private static void SetStatsTheme(SherlockActivity activity) {
-        int[] appThemeColor = SetTheme(activity);
+    private static void SetStatsTheme(Context context) {
+        int[] appThemeColor = SetTheme(context);
         if (appThemeColor.length == AppConfig.THEME_SIZE) {
             Statistics.Back.setBackgroundResource(appThemeColor[1]);
         }
     }
 
     // Setting the theme colour for each button and background in GameLayout
-    private static void SetGameLayoutTheme(SherlockActivity activity) {
-        int[] appThemeColor = SetTheme(activity);
+    private static void SetGameLayoutTheme(Context context) {
+        int[] appThemeColor = SetTheme(context);
         if (appThemeColor.length == AppConfig.THEME_SIZE) {
             Game.ScrollView.setBackgroundResource(appThemeColor[AppConfig.THEME_BACKGROUND]);
             Game.Button1.setBackgroundResource(appThemeColor[1]);
@@ -136,8 +136,8 @@ public class Theme {
         }
     }
 
-    private static void SetAboutTheme(SherlockActivity activity) {
-        int[] appThemeColor = SetTheme(activity);
+    private static void SetAboutTheme(Context context) {
+        int[] appThemeColor = SetTheme(context);
         if (appThemeColor.length == AppConfig.THEME_SIZE) {
             About.Back.setBackgroundResource(appThemeColor[1]);
         }

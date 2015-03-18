@@ -1,6 +1,7 @@
 package com.example.GuessBeerCountry.Library;
 
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.graphics.Typeface;
@@ -9,6 +10,7 @@ import android.preference.PreferenceManager;
 import android.widget.ImageView;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.app.SherlockPreferenceActivity;
 import com.example.GuessBeerCountry.Activity.SplashScreen;
 import com.example.GuessBeerCountry.Database.DatabaseHelper;
 
@@ -21,6 +23,10 @@ import java.util.ArrayList;
 public class Utility {
 
     public static void SetActionBar(ActionBar actionBar, SherlockActivity activity) {
+
+    }
+
+    public static void SetActionBar(ActionBar actionBar, SherlockPreferenceActivity activity) {
 
     }
 
@@ -47,26 +53,26 @@ public class Utility {
         }
     }
 
-    public static Object[] GetSharedPreference(SherlockActivity activity) {
+    public static Object[] GetSharedPreference(Context context) {
         return new Object[]{
                 PreferenceManager
-                        .getDefaultSharedPreferences(activity.getBaseContext())
+                        .getDefaultSharedPreferences(context)
                         .getString(PreferenceName.Language.toString(),
                                 AppConfig.PREF_LANGUAGE_DEF),
                 PreferenceManager
-                        .getDefaultSharedPreferences(activity.getBaseContext())
+                        .getDefaultSharedPreferences(context)
                         .getString(PreferenceName.Theme.toString(),
                                 AppConfig.PREF_THEME_DEF),
                 PreferenceManager
-                        .getDefaultSharedPreferences(activity.getBaseContext())
+                        .getDefaultSharedPreferences(context)
                         .getString(PreferenceName.Range.toString(),
                                 AppConfig.PREF_RANGE_DEF),
                 PreferenceManager
-                        .getDefaultSharedPreferences(activity.getBaseContext())
+                        .getDefaultSharedPreferences(context)
                         .getBoolean(PreferenceName.Sound.toString(),
                                 AppConfig.PREF_SOUND_DEF),
                 PreferenceManager
-                        .getDefaultSharedPreferences(activity.getBaseContext())
+                        .getDefaultSharedPreferences(context)
                         .getBoolean(PreferenceName.Update.toString(),
                                 AppConfig.PREF_UPDATE_DEF)
         };
