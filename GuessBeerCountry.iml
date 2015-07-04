@@ -15,7 +15,19 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="actionbarsherlock" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../actionbarsherlock" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../actionbarsherlock/gen" />
+          <root url="file://$MODULE_DIR$/../actionbarsherlock/src" />
+          <root url="file://$MODULE_DIR$/../actionbarsherlock/test" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>
 
