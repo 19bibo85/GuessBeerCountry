@@ -1,5 +1,6 @@
 package com.GuessBeerCountry.Database;
 
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import com.actionbarsherlock.app.SherlockActivity;
@@ -11,8 +12,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "gueseBeer.db";
     private static final int DATABASE_VERSION = 1;
 
-    public DatabaseHelper(SherlockActivity activity) {
-        super(activity.getBaseContext(), DATABASE_NAME, null, DATABASE_VERSION);
+    public DatabaseHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     // Method is called during creation of the database

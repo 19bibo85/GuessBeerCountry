@@ -501,6 +501,40 @@ public class Language {
                 prefs[AppConfig.PREF_LANGUAGE_INDEX].toString(),
                 activityStringNum);
     }
+    
+    public static String SetMainList(Context context, String continent) {
+    	String result = AppConfig.MAIN_LIST_EUROPE_DEF;
+    	Object[] prefs = Utility.GetSharedPreference(context);
+        if (prefs.length == AppConfig.PREFERENCE) {
+            String language = prefs[AppConfig.PREF_LANGUAGE_INDEX].toString();
+            
+            // Getting all continent for the language selected
+            String[] strContinent = GetStringArray(
+                    ComponentName.MainList,
+                    context,
+                    language,
+                    AppConfig.MAIN_LIST_LANGUAGE_SIZE);
+            
+            //TODO: Add country, area
+            if (strContinent != null) {
+                if (continent.equals(AppConfig.MAIN_LIST_EUROPE_DEF)) {
+                    result = strContinent[AppConfig.MAIN_LIST_EUROPE_INDEX];
+                } else if (continent.equals(AppConfig.MAIN_LIST_NORTH_AMERICA_DEF)) {
+                    result = strContinent[AppConfig.MAIN_LIST_NORTH_AMERICA_INDEX];
+                } else if (continent.equals(AppConfig.MAIN_LIST_SOUTH_AMERICA_DEF)) {
+                    result = strContinent[AppConfig.MAIN_LIST_SOUTH_AMERICA_INDEX];
+                } else if (continent.equals(AppConfig.MAIN_LIST_ASIA_DEF)) {
+                    result = strContinent[AppConfig.MAIN_LIST_ASIA_INDEX];
+                } else if (continent.equals(AppConfig.MAIN_LIST_AFRICA_DEF)) {
+                    result = strContinent[AppConfig.MAIN_LIST_AFRICA_INDEX];
+                } else if (continent.equals(AppConfig.MAIN_LIST_OCEANIA_DEF)) {
+                    result = strContinent[AppConfig.MAIN_LIST_OCEANIA_INDEX];
+                }
+            }            
+        }        
+        return result;
+    }  
+    
 
     public static String[] GetStringArray(ComponentName name,
                                           Context context,

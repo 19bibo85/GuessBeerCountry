@@ -11,7 +11,7 @@ public enum PreferenceName {
     Sound("pref_sound"),
     Clear("pref_clear");
 
-    String key;
+    private String key;
     private PreferenceName(String key)
     {
         this.key = key;

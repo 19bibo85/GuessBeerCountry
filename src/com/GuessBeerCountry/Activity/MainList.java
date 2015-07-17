@@ -3,14 +3,21 @@ package com.GuessBeerCountry.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import com.GuessBeerCountry.R;
 import com.GuessBeerCountry.Database.DatabaseHelper;
+import com.GuessBeerCountry.Library.AppConfig;
 import com.GuessBeerCountry.Library.ComponentName;
 import com.GuessBeerCountry.Library.Language;
+import com.GuessBeerCountry.Library.Query;
 import com.GuessBeerCountry.Library.Title;
 import com.GuessBeerCountry.Library.Utility;
 import com.GuessBeerCountry.Model.Beer;
+import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
 
 import java.util.ArrayList;
@@ -20,67 +27,44 @@ import java.util.Locale;
  * Created by Alberto Tosi Brandi on 18/03/2015.
  */
 public class MainList extends SherlockActivity {
+	private final static String TAG = "MainList";
+	
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.list);
-
-        com.actionbarsherlock.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        Utility.SetActionBar(actionBar, this);
-
-        ArrayList<Beer> beerList = new ArrayList<Beer>();
-
-        // Getting from the database all the continents
-        DatabaseHelper databaseHelper = Utility.GetDataBaseHelper(this);
-
-        String[] prefs = SharedPreference.GetSharedPreferenceString(this.getBaseContext());
-        if (prefs.length == SharedPreference.STRING_SIZE) {
-
-            String queryCountry = prefs[2];
-            String whereCond =
-                    !queryCountry.equals("All") ?
-                            " WHERE Country = '" + queryCountry + "'" :
-                            " WHERE Country = 'Europe' OR Country = 'ROTW'";
-            whereCond = whereCond + " AND Plate.Version <> 0 GROUP BY Continent";
-
-            String query = "SELECT Continent FROM Plate " + whereCond;
-
-            // Getting the
-            Cursor cursor = db.rawQuery(query, null);
-            int count = cursor.getCount();
-            if (count > 0) {
-                while (cursor.moveToNext()) {
-                    String name;
-                    Plate plate;
-
-                    if (cursor.isNull(0))
-                        name = "Europe";
-                    else
-                        name = cursor.getString(0);
-
-                    plate = new Plate();
-                    plate.setName(name);
-                    plate.setLanguage(setLanguage(this.getBaseContext(), name));
-                    plate.setImgID(setImgID(name));
-                    plateList.add(plate);
-                }
-            }
-
-            // Getting the view from the list and attaching the strings in the list continents
-            final ListView plateListView = (ListView) findViewById(R.id.PlateListView);
-            plateListView.setAdapter(new ListPlateAdapter(this, this.getBaseContext(), plateList, R.layout.stats_custom));
-
-            plateListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-                @Override
-                public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
-                    final Plate item = (Plate) parent.getItemAtPosition(position);
-                    listActivity(item);
-                }
-            });
-
-            // Set the title style
-            Title.SetTitle(ComponentName.MainList, actionBar, this);
+    	try{
+	        super.onCreate(savedInstanceState);
+	        setContentView(R.layout.list);
+	
+	        ActionBar actionBar = getSupportActionBar();
+	        Utility.SetActionBar(actionBar, this);
+	        Log.i(TAG, "Setting ACTIONBAR.");
+        	     
+	        DatabaseHelper databaseHelper = Utility.GetDataBaseHelper(this);
+	        Log.i(TAG, "Getting Database Helper.");
+	        
+	        Object[] sharedPreference = Utility.GetSharedPreference(this);	        
+	        if (sharedPreference.length == AppConfig.PREFERENCE) {
+	        	ArrayList<Beer> beerList = Query.GetBeerList(sharedPreference[AppConfig.PREF_RANGE_INDEX].toString(), this);	            
+	        	Log.i(TAG, "Populating Beer List.");
+		            
+	            final ListView beerListView = (ListView) findViewById(R.id.BeerListView);
+	            beerListView.setAdapter(new BeerListAdapter(this, this.getBaseContext(), beerList, R.layout.stats_custom));
+	            Log.i(TAG, "Getting the view from the list and attaching the strings in the list continents.");
+	            
+	            beerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+	
+	                @Override
+	                public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
+	                    final Beer item = (Beer) parent.getItemAtPosition(position);
+	                    listActivity(item);
+	                }
+	            });
+	
+	            Title.SetTitle(ComponentName.MainList, actionBar, this);
+	            Log.i(TAG, "Setting Title.");
+	        }
+        } catch (Exception ex) {
+            Log.e(TAG, "Main exception.");
+            Log.e(TAG, "Message: " + ex.getMessage());
         }
     }
 
@@ -92,42 +76,10 @@ public class MainList extends SherlockActivity {
     }
 
     private void listActivity(Beer item) {
-        Intent intent = new Intent(this, ListPlateActivity.class);
+        Intent intent = new Intent(this, BeerList.class);
         intent.putExtra("Key", item.getName());
         startActivity(intent);
-    }
-
-    private String setImgID(String continent) {
-        String imgID = "co_eur_001";
-        final int LAST_CHAR = 3;
-        if (!TextUtils.isEmpty(continent) && LAST_CHAR <= continent.length()) {
-            imgID = "co_" + continent.substring(0, LAST_CHAR).toLowerCase(Locale.getDefault()) + "_001";
-            //Log.e("SCORE", imgID+"");
-        }
-        return imgID;
-    }
-
-    private String setLanguage(Context context, String continent) {
-        String result = "Europe";
-        final int SIZE = 6;
-        String[] localized = Language.SetMainList(context);
-        if (localized != null && localized.length == SIZE) {
-            if (continent.equals("Europe")) {
-                result = localized[0];
-            } else if (continent.equals("North America")) {
-                result = localized[1];
-            } else if (continent.equals("South America")) {
-                result = localized[2];
-            } else if (continent.equals("Asia")) {
-                result = localized[3];
-            } else if (continent.equals("Africa")) {
-                result = localized[4];
-            } else if (continent.equals("Australia")) {
-                result = localized[5];
-            }
-        }
-        return result;
-    }
+    }    
 
     @Override
     public boolean onOptionsItemSelected(com.actionbarsherlock.view.MenuItem item) {

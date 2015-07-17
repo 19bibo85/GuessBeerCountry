@@ -134,11 +134,10 @@ public class Setting extends SherlockPreferenceActivity implements SharedPrefere
         }
     }
 
-    private void setSummary(SharedPreferences sharedPreferences, PreferenceName key){
-        final int SIZE = 6;
+    private void setSummary(SharedPreferences sharedPreferences, PreferenceName key){         
         String language = sharedPreferences.getString(PreferenceName.Language.toString(), "en");
-        String[] strTitle = Language.GetStringArray(SettingName.Title, this.getBaseContext(), language, SIZE);
-        String[] strSummary = Language.GetStringArray(SettingName.Summary, this.getBaseContext(), language, SIZE);
+        String[] strTitle = Language.GetStringArray(SettingName.Title, this.getBaseContext(), language, AppConfig.SETTING_LANGUAGE_TITLE_SIZE);
+        String[] strSummary = Language.GetStringArray(SettingName.Summary, this.getBaseContext(), language, AppConfig.SETTING_LANGUAGE_SUMMARY_SIZE);
         Language.SetTitleAndSummary(this, strTitle, strSummary, key, this.getBaseContext(), language);
     }
 

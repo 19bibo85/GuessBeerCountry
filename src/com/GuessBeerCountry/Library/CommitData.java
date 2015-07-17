@@ -1,6 +1,8 @@
 package com.GuessBeerCountry.Library;
 
+import android.content.Context;
 import android.content.SharedPreferences;
+import android.preference.DialogPreference;
 import android.preference.PreferenceManager;
 
 import com.GuessBeerCountry.Activity.About;
@@ -15,32 +17,44 @@ public class CommitData {
 
     private static SharedPreferences sharedPref = null;
 
-    public static void SetCommitData(ComponentName name, SherlockActivity activity) {
+    public static <T> void SetCommitData(ComponentName name, T activity) {
         switch (name) {
             case Splashscreen:
-                SetSplashscreen(activity);
+            	if(activity instanceof SherlockActivity)
+            		SetSplashscreen((SherlockActivity) activity);            	
                 break;
             case Main:
-                SetMain(activity);
+            	if(activity instanceof SherlockActivity)
+            		SetMain((SherlockActivity) activity);
                 break;
             case Start:
-                SetStart(activity);
+            	if(activity instanceof SherlockActivity)
+            		SetStart((SherlockActivity)activity);
                 break;
             case BestScore:
-                SetBestScore(activity);
+            	if(activity instanceof SherlockActivity)
+            		SetBestScore((SherlockActivity)activity);
                 break;
             case Score:
-                SetScore(activity);
+            	if(activity instanceof SherlockActivity)
+            		SetScore((SherlockActivity)activity);
                 break;
             case Stats:
-                SetStats(activity);
+            	if(activity instanceof SherlockActivity)
+            		SetStats((SherlockActivity)activity);
                 break;
             case StatsList:
-                SetStatsList(activity);
+            	if(activity instanceof SherlockActivity)
+            		SetStatsList((SherlockActivity)activity);
                 break;
             case About:
-                SetAbout(activity);
+            	if(activity instanceof SherlockActivity)
+            		SetAbout((SherlockActivity)activity);
                 break;
+            case Setting:
+            	if(activity instanceof DialogPreference)
+            		SetSetting((DialogPreference)activity);
+            	break;
             default:
                 break;
         }
@@ -99,10 +113,21 @@ public class CommitData {
         edit.putString(AppConfig.ABOUT_DEVELOPER_DEF, About.Developer.getText().toString());
         edit.commit();
     }
+    
+    private static void SetSetting(DialogPreference activity) {
+        sharedPref = GetSharedInstance(activity.getContext());
+        SharedPreferences.Editor edit = sharedPref.edit();
+        edit.putString(PreferenceName.Language.toString(), AppConfig.PREF_LANGUAGE_DEF);
+        edit.putString(PreferenceName.Theme.toString(), AppConfig.PREF_THEME_DEF);
+        edit.putString(PreferenceName.Range.toString(), AppConfig.PREF_RANGE_DEF);
+        edit.putBoolean(PreferenceName.Update.toString(), AppConfig.PREF_UPDATE_DEF);
+        edit.putBoolean(PreferenceName.Sound.toString(), AppConfig.PREF_SOUND_DEF);
+        edit.commit();
+    }
 
-    private static SharedPreferences GetSharedInstance(SherlockActivity activity){
+    private static SharedPreferences GetSharedInstance(Context context){
         if(sharedPref == null)
-            sharedPref = PreferenceManager.getDefaultSharedPreferences(activity.getBaseContext());
+            sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
         return sharedPref;
     }
 }

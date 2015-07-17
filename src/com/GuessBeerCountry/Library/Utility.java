@@ -8,6 +8,7 @@ import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.preference.PreferenceManager;
+import android.text.TextUtils;
 import android.widget.ImageView;
 
 import com.GuessBeerCountry.Activity.SplashScreen;
@@ -18,6 +19,7 @@ import com.actionbarsherlock.app.SherlockPreferenceActivity;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Created by Alberto Tosi Brandi on 05/10/2014.
@@ -36,7 +38,7 @@ public class Utility {
 
     }
 
-    public static void SetAudio(SherlockActivity activity, Sound audioEvent) {
+    public static void SetAudio(SherlockActivity activity, SoundName audioEvent) {
 
     }
 
@@ -98,10 +100,10 @@ public class Utility {
     }
 
     // Return the database helper
-    public static DatabaseHelper GetDataBaseHelper(SherlockActivity activity) {
+    public static <T> DatabaseHelper GetDataBaseHelper(Context context) {
         DatabaseHelper databaseHelper = SplashScreen.DatabaseHelper;
         if (databaseHelper == null)
-            databaseHelper = new DatabaseHelper(activity);
+            databaseHelper = new DatabaseHelper(context);
         return databaseHelper;
     }
 
@@ -153,5 +155,14 @@ public class Utility {
             }
         }
         return result;
+    }    
+    
+    public static String SetImgId(String continent) {
+        String imgID = "co_eur_001";
+        final int LAST_CHAR = 3;
+        if (!TextUtils.isEmpty(continent) && LAST_CHAR <= continent.length()) {
+            imgID = "co_" + continent.substring(0, LAST_CHAR).toLowerCase(Locale.getDefault()) + "_001";
+        }
+        return imgID;
     }
 }

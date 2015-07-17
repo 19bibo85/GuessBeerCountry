@@ -13,6 +13,8 @@ public class Beer {
     private String area;
     private String continent;
 
+    public Beer(){};
+    
     public Beer(String imgId, String name, String type, int difficulty, String country, String area, String continent) {
         this.imgId = imgId;
         this.name = name;
