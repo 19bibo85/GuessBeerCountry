@@ -1,9 +1,9 @@
 package com.GuessBeerCountry.Activity;
 
 import com.GuessBeerCountry.Database.DatabaseHelper;
-import com.GuessBeerCountry.Library.CommitData;
-import com.GuessBeerCountry.Library.ComponentName;
-import com.GuessBeerCountry.Library.Utility;
+import com.GuessBeerCountry.Repository.CommitData;
+import com.GuessBeerCountry.Repository.ComponentName;
+import com.GuessBeerCountry.Repository.Utility;
 import com.GuessBeerCountry.Task.ScoreAsync;
 
 import android.content.Context;

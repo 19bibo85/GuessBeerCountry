@@ -4,47 +4,46 @@ public class BeerBase {
 	private int id;
 	private String name;
 	private String language;
-	private String imgID;
+	private String imgId;
 	
 	public BeerBase(){}
 	
-	public BeerBase(int id, String name, String language, String imgID){
+	public BeerBase(int id, String name, String language, String imgId){
 		this.id = id;
 		this.name = name;
 		this.language = language;
-		this.imgID = imgID;
+		this.imgId = imgId;
 	}
 	
-	public void setID(int id){
+	public void SetID(int id){
 		this.id = id;
 	}
 	
-	public void setName(String name){
+	public void SetName(String name){
 		this.name = name;
 	}
 	
-	public void setLanguage(String language){
+	public void SetLanguage(String language){
 		this.language = language;
 	}
 	
-	public void setImgID(String imgID){
-		this.imgID = imgID;		
+	public void SetImgId(String imgId){
+		this.imgId = imgId;		
 	}
 	
-	public int getId(){
+	public int GetId(){
 		return id;
 	}
 	
-	public String getName(){
+	public String GetName(){
 		return name;
 	}
 	
-	public String getLanguage(){
+	public String GetLanguage(){
 		return language;
 	}
 	
-	public String getImgID(){
-		return imgID;
+	public String GetImgId(){
+		return imgId;
 	}
-
 }

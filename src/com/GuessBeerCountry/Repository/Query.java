@@ -1,11 +1,11 @@
-package com.GuessBeerCountry.Library;
+package com.GuessBeerCountry.Repository;
 
 import java.util.ArrayList;
 import java.util.Locale;
 
 import com.GuessBeerCountry.Activity.Start;
 import com.GuessBeerCountry.Database.DatabaseHelper;
-import com.GuessBeerCountry.Model.Beer;
+import com.GuessBeerCountry.Model.BeerBase;
 
 import android.app.Activity;
 import android.content.ContentValues;
@@ -204,9 +204,9 @@ public class Query {
     }
 
     // Retrieve list of beer to display
-    public static ArrayList<Beer> GetBeerList(String continent, Activity activity){
-    	ArrayList<Beer> beerList = new ArrayList<Beer>();
-    	
+    public static ArrayList<BeerBase> GetBeerList(String continent, Activity activity){
+    	ArrayList<BeerBase> beerList = new ArrayList<BeerBase>();
+    	    	
     	//TODO: 
         String whereCond = !continent.equals("All") ?
                            " WHERE Country = '" + continent + "'" :
@@ -214,16 +214,17 @@ public class Query {
         whereCond = whereCond + " AND Plate.Version <> 0 GROUP BY Continent";
         String query = "SELECT Continent FROM Plate " + whereCond;
 
+        db = Utility.GetDataBaseHelper(activity).getReadableDatabase();
         Cursor cursor = db.rawQuery(query, null);
         int count = cursor.getCount();
         if (count > 0) {
             while (cursor.moveToNext()) {
                 String name = AppConfig.PREF_RANGE_DEF;
-                Beer beer = new Beer();
+                BeerBase beer = new BeerBase();
                 if (!cursor.isNull(0))
                     name = cursor.getString(0);
                 beer.SetName(name);
-                beer.SetContinent(Language.SetMainList(activity, continent));
+                beer.SetLanguage(Language.SetMainList(activity, continent));
                 beer.SetImgId(Utility.SetImgId(name));
                 beerList.add(beer);
             }

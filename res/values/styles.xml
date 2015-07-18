@@ -14,6 +14,15 @@
         <item name="android:orientation">vertical</item>
         <item name="android:gravity">center_horizontal</item>
     </style>
+    
+    <!-- List Layout -->
+    <style name="list_layout">
+        <item name="android:layout_width">fill_parent</item>
+    	<item name="android:layout_height">fill_parent</item>
+    	<item name="android:orientation">vertical</item>
+    	<item name="android:gravity">center_horizontal</item>
+    	<item name="android:background">#FFFFFF</item>  
+    </style>
 
     <!-- Table Layout -->
     <style name="table_layout">
@@ -67,4 +76,20 @@
         <item name="android:layout_margin">5dp</item>
         <item name="android:src">@drawable/logo</item>
     </style>
+    
+    <!-- Image -->
+	<style name="image">	    
+	    <item name="android:layout_width">wrap_content</item>	    
+        <item name="android:layout_height">wrap_content</item>
+  		<item name="android:src">@drawable/a1396_001</item>
+    </style>
+    
+	<!-- Text View Simple List -->
+	<style name="text_view_inflate">
+	    <item name="android:layout_width">wrap_content</item>
+	    <item name="android:layout_height">wrap_content</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textColor">#000000</item>
+	</style>
+    
 </resources>

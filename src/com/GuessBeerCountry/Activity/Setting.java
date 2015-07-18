@@ -7,10 +7,10 @@ import android.util.Log;
 
 import com.GuessBeerCountry.R;
 import com.GuessBeerCountry.Fragment.SettingF;
-import com.GuessBeerCountry.Library.ComponentName;
-import com.GuessBeerCountry.Library.Language;
-import com.GuessBeerCountry.Library.Title;
-import com.GuessBeerCountry.Library.Utility;
+import com.GuessBeerCountry.Repository.ComponentName;
+import com.GuessBeerCountry.Repository.Language;
+import com.GuessBeerCountry.Repository.Title;
+import com.GuessBeerCountry.Repository.Utility;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.app.SherlockPreferenceActivity;
 

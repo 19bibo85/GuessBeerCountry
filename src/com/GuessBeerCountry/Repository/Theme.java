@@ -1,4 +1,4 @@
-package com.GuessBeerCountry.Library;
+package com.GuessBeerCountry.Repository;
 
 import com.GuessBeerCountry.R;
 import com.GuessBeerCountry.Activity.*;

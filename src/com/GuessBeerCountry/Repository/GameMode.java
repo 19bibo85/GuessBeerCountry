@@ -1,4 +1,4 @@
-package com.GuessBeerCountry.Library;
+package com.GuessBeerCountry.Repository;
 
 /**
  * Created by elyvitvit on 15/10/2014.

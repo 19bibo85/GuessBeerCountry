@@ -9,7 +9,7 @@ import android.widget.ScrollView;
 
 import com.GuessBeerCountry.R;
 import com.GuessBeerCountry.Database.DatabaseHelper;
-import com.GuessBeerCountry.Library.*;
+import com.GuessBeerCountry.Repository.*;
 import com.GuessBeerCountry.Task.AboutAsync;
 import com.GuessBeerCountry.Task.ScoreAsync;
 import com.actionbarsherlock.app.ActionBar;

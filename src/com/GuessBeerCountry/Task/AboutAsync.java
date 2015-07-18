@@ -7,9 +7,9 @@ import android.util.Log;
 
 import com.GuessBeerCountry.Activity.Main;
 import com.GuessBeerCountry.Database.DatabaseHelper;
-import com.GuessBeerCountry.Library.AppConfig;
-import com.GuessBeerCountry.Library.Query;
-import com.GuessBeerCountry.Library.Utility;
+import com.GuessBeerCountry.Repository.AppConfig;
+import com.GuessBeerCountry.Repository.Query;
+import com.GuessBeerCountry.Repository.Utility;
 
 import java.util.ArrayList;
 

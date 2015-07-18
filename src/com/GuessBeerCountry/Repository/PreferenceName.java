@@ -1,4 +1,4 @@
-package com.GuessBeerCountry.Library;
+package com.GuessBeerCountry.Repository;
 
 /**
  * Created by Alberto Tosi Brandi on 09/10/2014.

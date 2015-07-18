@@ -1,4 +1,4 @@
-package com.GuessBeerCountry.Library;
+package com.GuessBeerCountry.Repository;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;

@@ -1,4 +1,4 @@
-package com.GuessBeerCountry.Library;
+package com.GuessBeerCountry.Repository;
 
 import android.app.Activity;
 import android.content.Context;

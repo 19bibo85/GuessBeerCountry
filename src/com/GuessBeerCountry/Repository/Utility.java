@@ -1,4 +1,4 @@
-package com.GuessBeerCountry.Library;
+package com.GuessBeerCountry.Repository;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

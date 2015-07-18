@@ -17,10 +17,10 @@ import com.GuessBeerCountry.Activity.SplashScreen;
 import com.GuessBeerCountry.Database.Database;
 import com.GuessBeerCountry.Database.DatabaseHelper;
 import com.GuessBeerCountry.Database.InitialData;
-import com.GuessBeerCountry.Library.*;
 import com.GuessBeerCountry.Network.ServerError;
 import com.GuessBeerCountry.Network.ThreadSafeHttpClientFactory;
 import com.GuessBeerCountry.Network.WebConf;
+import com.GuessBeerCountry.Repository.*;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;

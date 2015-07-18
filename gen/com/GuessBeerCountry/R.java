@@ -316,7 +316,7 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int 1396_001=0x7f020000;
+        public static final int a1396_001=0x7f020000;
         public static final int aguila_001=0x7f020001;
         public static final int aguilla_002=0x7f020002;
         public static final int alcatraz_001=0x7f020003;
@@ -460,43 +460,50 @@ public final class R {
         public static final int zywiec_001=0x7f02008d;
     }
     public static final class id {
-        public static final int BeerListView=0x7f090021;
+        public static final int ListView=0x7f090021;
         public static final int Main=0x7f090022;
         public static final int acknowledge=0x7f090008;
-        public static final int action_about=0x7f090038;
-        public static final int action_settings=0x7f090037;
+        public static final int action_about=0x7f09003f;
+        public static final int action_settings=0x7f09003e;
         public static final int all_plates=0x7f090019;
         public static final int back=0x7f090009;
         public static final int best_score=0x7f09000b;
-        public static final int correct_answer=0x7f090027;
+        public static final int correct_answer=0x7f09002d;
         public static final int developer=0x7f090006;
         public static final int easy=0x7f09000d;
-        public static final int game_over=0x7f090026;
+        public static final int game_over=0x7f09002c;
         public static final int hard=0x7f090015;
+        public static final int image=0x7f090027;
         public static final int image_plate=0x7f090002;
         public static final int lab_acknowledge=0x7f090007;
         public static final int lab_developer=0x7f090005;
         public static final int lab_version=0x7f090003;
         public static final int list=0x7f090024;
-        public static final int loading=0x7f090032;
+        public static final int list_layout=0x7f090026;
+        public static final int loading=0x7f090039;
         public static final int logo=0x7f090001;
         public static final int medium=0x7f090011;
+        public static final int name=0x7f090038;
+        public static final int name1=0x7f090028;
+        public static final int name2=0x7f090029;
+        public static final int name3=0x7f09002a;
+        public static final int name4=0x7f09002b;
         public static final int no_fault=0x7f09001d;
-        public static final int no_time_limit=0x7f090034;
-        public static final int number_correct_answer=0x7f090028;
-        public static final int number_wrong_answer=0x7f09002b;
-        public static final int point=0x7f09002d;
-        public static final int point_correct_answer=0x7f090029;
-        public static final int point_value=0x7f09002e;
-        public static final int point_wrong_answer=0x7f09002c;
-        public static final int rate=0x7f09002f;
+        public static final int no_time_limit=0x7f09003b;
+        public static final int number_correct_answer=0x7f09002e;
+        public static final int number_wrong_answer=0x7f090031;
+        public static final int point=0x7f090033;
+        public static final int point_correct_answer=0x7f09002f;
+        public static final int point_value=0x7f090034;
+        public static final int point_wrong_answer=0x7f090032;
+        public static final int rate=0x7f090035;
         public static final int rate_all_plates=0x7f09001b;
         public static final int rate_easy=0x7f09000f;
         public static final int rate_hard=0x7f090017;
         public static final int rate_medium=0x7f090013;
         public static final int rate_no_fault=0x7f09001f;
-        public static final int rate_value=0x7f090030;
-        public static final int review=0x7f090031;
+        public static final int rate_value=0x7f090036;
+        public static final int review=0x7f090037;
         public static final int score_all_plates=0x7f09001a;
         public static final int score_easy=0x7f09000e;
         public static final int score_hard=0x7f090016;
@@ -512,21 +519,23 @@ public final class R {
         public static final int tableRow4=0x7f090014;
         public static final int tableRow5=0x7f090018;
         public static final int tableRow6=0x7f09001c;
-        public static final int text=0x7f090036;
-        public static final int time_limit=0x7f090033;
-        public static final int toast_layout=0x7f090035;
+        public static final int text=0x7f09003d;
+        public static final int time_limit=0x7f09003a;
+        public static final int toast_layout=0x7f09003c;
         public static final int version=0x7f090004;
-        public static final int wrong_answer=0x7f09002a;
+        public static final int wrong_answer=0x7f090030;
     }
     public static final class layout {
         public static final int about=0x7f030000;
         public static final int best_score=0x7f030001;
         public static final int list=0x7f030002;
         public static final int main=0x7f030003;
-        public static final int score=0x7f030004;
-        public static final int splashscreen=0x7f030005;
-        public static final int start=0x7f030006;
-        public static final int toast=0x7f030007;
+        public static final int review_inflate=0x7f030004;
+        public static final int score=0x7f030005;
+        public static final int simple_inflate=0x7f030006;
+        public static final int splashscreen=0x7f030007;
+        public static final int start=0x7f030008;
+        public static final int toast=0x7f030009;
     }
     public static final class menu {
         public static final int activity_main_actions=0x7f080000;
@@ -579,28 +588,37 @@ public final class R {
     public static final class style {
         /**  Button 
          */
-        public static final int button=0x7f070006;
+        public static final int button=0x7f070007;
+        /**  Image 
+         */
+        public static final int image=0x7f070009;
         /**  Layout 
          */
         public static final int linear_layout=0x7f070001;
+        /**  List Layout 
+         */
+        public static final int list_layout=0x7f070002;
         /**  Logo 
          */
-        public static final int logo=0x7f070007;
+        public static final int logo=0x7f070008;
         /**  Main Text view 
          */
-        public static final int main_text_view=0x7f070003;
+        public static final int main_text_view=0x7f070004;
         /**  Scroll 
          */
         public static final int scroll_view=0x7f070000;
         /**  Table Layout 
          */
-        public static final int table_layout=0x7f070002;
+        public static final int table_layout=0x7f070003;
         /**  Table Row 
          */
-        public static final int table_row=0x7f070005;
+        public static final int table_row=0x7f070006;
         /**  Table Text View 
          */
-        public static final int table_text_view=0x7f070004;
+        public static final int table_text_view=0x7f070005;
+        /**  Text View Simple List 
+         */
+        public static final int text_view_inflate=0x7f07000a;
     }
     public static final class xml {
         public static final int preferences=0x7f040000;

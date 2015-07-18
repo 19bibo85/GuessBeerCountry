@@ -10,9 +10,9 @@ import com.GuessBeerCountry.Activity.Main;
 import com.GuessBeerCountry.Activity.Option;
 import com.GuessBeerCountry.Activity.Start;
 import com.GuessBeerCountry.Database.DatabaseHelper;
-import com.GuessBeerCountry.Library.ComponentName;
-import com.GuessBeerCountry.Library.Query;
-import com.GuessBeerCountry.Library.Utility;
+import com.GuessBeerCountry.Repository.ComponentName;
+import com.GuessBeerCountry.Repository.Query;
+import com.GuessBeerCountry.Repository.Utility;
 import com.actionbarsherlock.app.SherlockActivity;
 
 import java.util.ArrayList;

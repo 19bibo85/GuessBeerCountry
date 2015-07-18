@@ -9,10 +9,10 @@ import android.widget.TextView;
 
 import com.GuessBeerCountry.R;
 import com.GuessBeerCountry.Database.DatabaseHelper;
-import com.GuessBeerCountry.Library.AppConfig;
-import com.GuessBeerCountry.Library.ComponentName;
-import com.GuessBeerCountry.Library.Language;
-import com.GuessBeerCountry.Library.Utility;
+import com.GuessBeerCountry.Repository.AppConfig;
+import com.GuessBeerCountry.Repository.ComponentName;
+import com.GuessBeerCountry.Repository.Language;
+import com.GuessBeerCountry.Repository.Utility;
 import com.GuessBeerCountry.Task.SplashAsync;
 import com.actionbarsherlock.app.SherlockActivity;
 

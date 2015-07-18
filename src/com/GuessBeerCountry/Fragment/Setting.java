@@ -7,7 +7,7 @@ import android.preference.ListPreference;
 import android.util.Log;
 
 import com.GuessBeerCountry.R;
-import com.GuessBeerCountry.Library.*;
+import com.GuessBeerCountry.Repository.*;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockPreferenceActivity;
 

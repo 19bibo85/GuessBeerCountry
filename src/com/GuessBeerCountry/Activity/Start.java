@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.GuessBeerCountry.R;
 import com.GuessBeerCountry.Database.DatabaseHelper;
-import com.GuessBeerCountry.Library.*;
+import com.GuessBeerCountry.Repository.*;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.MenuItem;
