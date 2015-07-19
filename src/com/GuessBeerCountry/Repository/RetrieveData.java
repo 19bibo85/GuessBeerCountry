@@ -6,6 +6,7 @@ import android.preference.PreferenceManager;
 import com.GuessBeerCountry.Activity.About;
 import com.GuessBeerCountry.Activity.BestScore;
 import com.GuessBeerCountry.Activity.Score;
+import com.GuessBeerCountry.Activity.Stats;
 import com.actionbarsherlock.app.SherlockActivity;
 
 import java.util.ArrayList;
@@ -160,6 +161,63 @@ public class RetrieveData {
     }
 
     private static boolean SetStats(SherlockActivity activity) {
+    	
+    	sharedPref = GetSharedInstance(activity);
+
+        if (sharedPref != null) {
+        	Stats.AllBeers.setText(sharedPref.getString(AppConfig.STATS_ALL_BEERS_DEF, 
+        			AppConfig.STATS_RETRIEVE_ALL_BEERS_DEF));
+        	
+    		Stats.CorrAns.setText(sharedPref.getString(AppConfig.STATS_CORRECT_ANSWERS_DEF, 
+        			AppConfig.STATS_RETRIEVE_CORRECT_ANSWERS_DEF));
+    		
+    		Stats.WrgAns.setText(sharedPref.getString(AppConfig.STATS_WRONG_ANSWERS_DEF, 
+        			AppConfig.STATS_RETRIEVE_WRONG_ANSWERS_DEF));
+    		
+    		Stats.MostBeer.setText(sharedPref.getString(AppConfig.STATS_MOST_BEER_DEF, 
+        			AppConfig.STATS_RETRIEVE_MOST_BEER_DEF));
+    		
+    		Stats.LeastBeer.setText(sharedPref.getString(AppConfig.STATS_LEAST_BEER_DEF, 
+        			AppConfig.STATS_RETRIEVE_LEAST_BEER_DEF));
+    		
+    		Stats.MostLang.setText(sharedPref.getString(AppConfig.STATS_MOST_LANG_DEF, 
+        			AppConfig.STATS_RETRIEVE_MOST_LANG_DEF));
+    		
+    		Stats.LeastLang.setText(sharedPref.getString(AppConfig.STATS_LEAST_LANG_DEF, 
+        			AppConfig.STATS_RETRIEVE_LEAST_LANG_DEF));
+    		
+    		Stats.MostTheme.setText(sharedPref.getString(AppConfig.STATS_MOST_THEME_DEF, 
+        			AppConfig.STATS_RETRIEVE_MOST_THEME_DEF));
+    		
+    		Stats.LeastTheme.setText(sharedPref.getString(AppConfig.STATS_LEAST_THEME_DEF, 
+        			AppConfig.STATS_RETRIEVE_LEAST_THEME_DEF));
+    		
+    		Stats.MostRange.setText(sharedPref.getString(AppConfig.STATS_MOST_RANGE_DEF, 
+        			AppConfig.STATS_RETRIEVE_MOST_RANGE_DEF));
+    		
+    		Stats.LeastRange.setText(sharedPref.getString(AppConfig.STATS_LEAST_RANGE_DEF, 
+        			AppConfig.STATS_RETRIEVE_LEAST_RANGE_DEF));
+    		
+    		if (activity.getIntent() != null) {
+                ArrayList<String> obj = activity.getIntent()
+                        .getStringArrayListExtra(ComponentName.Stats.toString());
+                if (obj != null &&
+                        obj.size() == AppConfig.STATS_RETRIEVE_SIZE) {
+                	Stats.AllBeers.setText(obj.get(AppConfig.STATS_RETRIEVE_ALL_BEERS_INDEX));
+                	Stats.CorrAns.setText(obj.get(AppConfig.STATS_RETRIEVE_CORRECT_ANSWERS_INDEX));
+                	Stats.WrgAns.setText(obj.get(AppConfig.STATS_RETRIEVE_WRONG_ANSWERS_INDEX));
+                	Stats.MostBeer.setText(obj.get(AppConfig.STATS_RETRIEVE_MOST_BEER_INDEX));
+                	Stats.LeastBeer.setText(obj.get(AppConfig.STATS_RETRIEVE_LEAST_BEER_INDEX));
+                	Stats.MostLang.setText(obj.get(AppConfig.STATS_RETRIEVE_MOST_LANG_INDEX));
+                	Stats.LeastLang.setText(obj.get(AppConfig.STATS_RETRIEVE_LEAST_LANG_INDEX));
+                	Stats.MostTheme.setText(obj.get(AppConfig.STATS_RETRIEVE_MOST_THEME_INDEX));
+                	Stats.LeastTheme.setText(obj.get(AppConfig.STATS_RETRIEVE_LEAST_THEME_INDEX));
+                	Stats.MostRange.setText(obj.get(AppConfig.STATS_RETRIEVE_MOST_RANGE_INDEX));
+                	Stats.LeastRange.setText(obj.get(AppConfig.STATS_RETRIEVE_LEAST_RANGE_INDEX));
+                }
+            }
+        }
+    	
         return true;
     }
 

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:id="@+id/Statistics" 
+        style="@style/linear_layout" >
+		
+        <TextView 
+            android:id="@+id/stats"  
+            style="@style/main_text_view"
+            android:textSize="20sp"
+            android:gravity="center_horizontal"
+            android:text="@+id/stats" />
+        
+        <TextView
+            android:id="@+id/lab_all_beers"
+            style="@style/main_text_view"
+            android:paddingTop="10dp"
+            android:text="@+id/lab_all_beers" />
+        
+        <TextView
+            android:id="@+id/all_beers"
+            style="@style/main_text_view"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:text="@+id/all_beers" />
+        
+        <TextView
+            android:id="@+id/lab_corr_ans"
+            style="@style/main_text_view"
+            android:paddingTop="10dp"
+            android:text="@+id/lab_corr_ans" />
+        
+        <TextView
+            android:id="@+id/corr_ans"
+            style="@style/main_text_view"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:text="@+id/corr_ans" />
+        
+        <TextView
+            android:id="@+id/lab_wrg_ans"
+            style="@style/main_text_view"
+            android:paddingTop="10dp"
+            android:text="@+id/lab_wrg_ans" />
+        
+        <TextView
+            android:id="@+id/wrg_ans"
+            style="@style/main_text_view"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:text="@+id/wrg_ans" />
+        
+        <TextView
+            android:id="@+id/lab_most_beer"
+            style="@style/main_text_view"
+            android:paddingTop="10dp"
+            android:text="@+id/lab_most_beer" />
+        
+        <TextView
+            android:id="@+id/most_beer"
+            style="@style/main_text_view"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:text="@+id/most_beer" />
+        
+        <TextView
+            android:id="@+id/lab_least_beer"
+            style="@style/main_text_view"
+            android:paddingTop="10dp"
+            android:text="@+id/lab_least_beer" />
+        
+        <TextView
+            android:id="@+id/least_beer"
+            style="@style/main_text_view"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:text="@+id/least_beer" />
+            
+        <TextView
+            android:id="@+id/lab_most_lang"
+            style="@style/main_text_view"
+            android:paddingTop="10dp"
+            android:text="@+id/lab_most_lang" />
+        
+        <TextView
+            android:id="@+id/most_lang"
+            style="@style/main_text_view"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:text="@+id/most_lang" />
+        
+        <TextView
+            android:id="@+id/lab_least_lang"
+            style="@style/main_text_view"
+            android:paddingTop="10dp"
+            android:text="@+id/lab_leas_lang" />
+        
+        <TextView
+            android:id="@+id/least_lang"
+            style="@style/main_text_view"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:text="@+id/least_lang" />
+        
+        <TextView
+            android:id="@+id/lab_most_theme"
+            style="@style/main_text_view"
+            android:paddingTop="10dp"
+            android:text="@+id/lab_most_theme" />
+        
+        <TextView
+            android:id="@+id/most_theme"
+            style="@style/main_text_view"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:text="@+id/most_theme" />
+        
+        <TextView
+            android:id="@+id/lab_least_theme"
+            style="@style/main_text_view"
+            android:paddingTop="10dp"
+            android:text="@+id/lab_leas_theme" />
+        
+        <TextView
+            android:id="@+id/least_theme"
+            style="@style/main_text_view"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:text="@+id/least_theme" />
+        
+        <TextView
+            android:id="@+id/lab_most_range"
+            style="@style/main_text_view"
+            android:paddingTop="10dp"
+            android:text="@+id/lab_most_range" />
+        
+        <TextView
+            android:id="@+id/most_range"
+            style="@style/main_text_view"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:text="@+id/most_range" />
+        
+        <TextView
+            android:id="@+id/lab_least_range"
+            style="@style/main_text_view"
+            android:paddingTop="10dp"
+            android:text="@+id/lab_leas_range" />
+        
+        <TextView
+            android:id="@+id/least_range"
+            style="@style/main_text_view"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:text="@+id/least_range" />
+        
+	   	<Button 
+		    android:id="@+id/back"
+			style="@style/button"
+			android:text="@+id/back" />   	
+        
+    </LinearLayout>
+</ScrollView>

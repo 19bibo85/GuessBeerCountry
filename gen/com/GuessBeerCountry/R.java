@@ -462,12 +462,15 @@ public final class R {
     public static final class id {
         public static final int ListView=0x7f090021;
         public static final int Main=0x7f090022;
+        public static final int Statistics=0x7f09003c;
         public static final int acknowledge=0x7f090008;
-        public static final int action_about=0x7f09003f;
-        public static final int action_settings=0x7f09003e;
+        public static final int action_about=0x7f090059;
+        public static final int action_settings=0x7f090058;
+        public static final int all_beers=0x7f09003e;
         public static final int all_plates=0x7f090019;
         public static final int back=0x7f090009;
         public static final int best_score=0x7f09000b;
+        public static final int corr_ans=0x7f090040;
         public static final int correct_answer=0x7f09002d;
         public static final int developer=0x7f090006;
         public static final int easy=0x7f09000d;
@@ -476,13 +479,35 @@ public final class R {
         public static final int image=0x7f090027;
         public static final int image_plate=0x7f090002;
         public static final int lab_acknowledge=0x7f090007;
+        public static final int lab_all_beers=0x7f09003d;
+        public static final int lab_corr_ans=0x7f09003f;
         public static final int lab_developer=0x7f090005;
+        public static final int lab_leas_lang=0x7f09004a;
+        public static final int lab_leas_range=0x7f090054;
+        public static final int lab_leas_theme=0x7f09004f;
+        public static final int lab_least_beer=0x7f090045;
+        public static final int lab_least_lang=0x7f090049;
+        public static final int lab_least_range=0x7f090053;
+        public static final int lab_least_theme=0x7f09004e;
+        public static final int lab_most_beer=0x7f090043;
+        public static final int lab_most_lang=0x7f090047;
+        public static final int lab_most_range=0x7f090051;
+        public static final int lab_most_theme=0x7f09004c;
         public static final int lab_version=0x7f090003;
+        public static final int lab_wrg_ans=0x7f090041;
+        public static final int least_beer=0x7f090046;
+        public static final int least_lang=0x7f09004b;
+        public static final int least_range=0x7f090055;
+        public static final int least_theme=0x7f090050;
         public static final int list=0x7f090024;
         public static final int list_layout=0x7f090026;
         public static final int loading=0x7f090039;
         public static final int logo=0x7f090001;
         public static final int medium=0x7f090011;
+        public static final int most_beer=0x7f090044;
+        public static final int most_lang=0x7f090048;
+        public static final int most_range=0x7f090052;
+        public static final int most_theme=0x7f09004d;
         public static final int name=0x7f090038;
         public static final int name1=0x7f090028;
         public static final int name2=0x7f090029;
@@ -519,10 +544,11 @@ public final class R {
         public static final int tableRow4=0x7f090014;
         public static final int tableRow5=0x7f090018;
         public static final int tableRow6=0x7f09001c;
-        public static final int text=0x7f09003d;
+        public static final int text=0x7f090057;
         public static final int time_limit=0x7f09003a;
-        public static final int toast_layout=0x7f09003c;
+        public static final int toast_layout=0x7f090056;
         public static final int version=0x7f090004;
+        public static final int wrg_ans=0x7f090042;
         public static final int wrong_answer=0x7f090030;
     }
     public static final class layout {
@@ -535,7 +561,8 @@ public final class R {
         public static final int simple_inflate=0x7f030006;
         public static final int splashscreen=0x7f030007;
         public static final int start=0x7f030008;
-        public static final int toast=0x7f030009;
+        public static final int stats=0x7f030009;
+        public static final int toast=0x7f03000a;
     }
     public static final class menu {
         public static final int activity_main_actions=0x7f080000;

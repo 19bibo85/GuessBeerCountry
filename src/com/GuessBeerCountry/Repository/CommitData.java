@@ -7,7 +7,9 @@ import android.preference.PreferenceManager;
 
 import com.GuessBeerCountry.Activity.About;
 import com.GuessBeerCountry.Activity.BestScore;
+import com.GuessBeerCountry.Activity.Editor;
 import com.GuessBeerCountry.Activity.Score;
+import com.GuessBeerCountry.Activity.Stats;
 import com.actionbarsherlock.app.SherlockActivity;
 
 /**
@@ -99,7 +101,20 @@ public class CommitData {
     }
 
     private static void SetStats(SherlockActivity activity) {
-
+    	sharedPref = GetSharedInstance(activity);
+        SharedPreferences.Editor edit = sharedPref.edit();
+		edit.putString(AppConfig.STATS_ALL_BEERS_DEF, Stats.AllBeers.getText().toString());
+		edit.putString(AppConfig.STATS_CORRECT_ANSWERS_DEF, Stats.CorrAns.getText().toString());
+		edit.putString(AppConfig.STATS_WRONG_ANSWERS_DEF, Stats.WrgAns.getText().toString());
+		edit.putString(AppConfig.STATS_MOST_BEER_DEF, Stats.MostBeer.getText().toString());
+		edit.putString(AppConfig.STATS_LEAST_BEER_DEF, Stats.LeastBeer.getText().toString());
+		edit.putString(AppConfig.STATS_MOST_LANG_DEF, Stats.MostLang.getText().toString());
+		edit.putString(AppConfig.STATS_LEAST_LANG_DEF, Stats.LeastLang.getText().toString());
+		edit.putString(AppConfig.STATS_MOST_THEME_DEF, Stats.MostTheme.getText().toString());
+		edit.putString(AppConfig.STATS_LEAST_THEME_DEF, Stats.LeastTheme.getText().toString());
+		edit.putString(AppConfig.STATS_MOST_RANGE_DEF, Stats.MostRange.getText().toString());
+		edit.putString(AppConfig.STATS_LEAST_RANGE_DEF, Stats.LeastRange.getText().toString());
+		edit.commit();
     }
 
     private static void SetStatsList(SherlockActivity activity) {
