@@ -257,5 +257,54 @@ public class AppConfig {
     public static final String MAIN_LIST_AFRICA_DEF = "Africa";
     public static final int MAIN_LIST_OCEANIA_INDEX = 5;
     public static final String MAIN_LIST_OCEANIA_DEF = "Oceania";
-
+    
+    // STATS
+    public static final int STATS_LANGUAGE_SIZE = 11;
+    public static final String STATS_ALL_BEERS_LABEL_DEF = "All Beers";
+    public static final String STATS_ALL_BEERS_DEF = "0";
+    public static final int STATS_ALL_BEERS_LABEL_INDEX = 0;
+    public static final String STATS_CORRECT_ANSWERS_LABEL_DEF = "Correct Answers";
+    public static final String STATS_CORRECT_ANSWERS_DEF = "0";
+    public static final int STATS_CORRECT_ANSWERS_LABEL_INDEX = 1;
+    public static final String STATS_WRONG_ANSWERS_LABEL_DEF = "Wrong Answers";
+    public static final String STATS_WRONG_ANSWERS_DEF = "0";
+    public static final int STATS_WRONG_ANSWER_LABEL_INDEX = 2;
+    public static final String STATS_MOST_BEER_LABEL_DEF = "Most Beer";
+    public static final String STATS_MOST_BEER_DEF = "1396";
+    public static final int STATS_MOST_BEER_LABEL_INDEX = 3;
+    public static final String STATS_LEAST_BEER_LABEL_DEF = "Least Beer";
+    public static final String STATS_LEAST_BEER_DEF = "1396";
+    public static final int STATS_LEAST_BEER_LABEL_INDEX = 4;
+    public static final String STATS_MOST_LANG_LABEL_DEF = "Most Lang";
+    public static final String STATS_MOST_LANG_DEF = "English";
+    public static final int STATS_MOST_LANG_LABEL_INDEX = 5;
+    public static final String STATS_LEAST_LANG_LABEL_DEF = "Least Lang";
+    public static final String STATS_LEAST_LANG_DEF = "English";
+    public static final int STATS_LEAST_LANG_LABEL_INDEX = 6;
+    public static final String STATS_MOST_THEME_LABEL_DEF = "Most Theme";
+    public static final String STATS_MOST_THEME_DEF = "Lager";
+    public static final int STATS_MOST_THEME_LABEL_INDEX = 7;
+    public static final String STATS_LEAST_THEME_LABEL_DEF = "Least Theme";
+    public static final String STATS_LEAST_THEME_DEF = "Lager";
+    public static final int STATS_LEAST_THEME_LABEL_INDEX = 8;
+    public static final String STATS_MOST_RANGE_LABEL_DEF = "Most Range";
+    public static final String STATS_MOST_RANGE_DEF = "Europe";
+    public static final int STATS_MOST_RANGE_LABEL_INDEX = 9;
+    public static final String STATS_LEAST_RANGE_LABEL_DEF = "LeastRange";
+    public static final String STATS_LEAST_RANGE_DEF = "Europe";
+    public static final int STATS_LEAST_RANGE_LABEL_INDEX = 10;
+   
+    public static final String STATS_DEFAULT_VALUE = "0";
+    public static final int STATS_RETRIEVE_SIZE = 11;
+    public static final int STATS_RETRIEVE_ALL_BEERS_INDEX = 0;    
+    public static final int STATS_RETRIEVE_CORRECT_ANSWERS_INDEX = 1;
+    public static final int STATS_RETRIEVE_WRONG_ANSWERS_INDEX = 2;
+    public static final int STATS_RETRIEVE_MOST_BEER_INDEX = 3;
+    public static final int STATS_RETRIEVE_LEAST_BEER_INDEX = 4;
+    public static final int STATS_RETRIEVE_MOST_LANG_INDEX = 5;
+    public static final int STATS_RETRIEVE_LEAST_LANG_INDEX = 6;
+    public static final int STATS_RETRIEVE_MOST_THEME_INDEX = 7;
+    public static final int STATS_RETRIEVE_LEAST_THEME_INDEX = 8;
+    public static final int STATS_RETRIEVE_MOST_RANGE_INDEX = 9;
+    public static final int STATS_RETRIEVE_LEAST_RANGE_INDEX = 10;
 }

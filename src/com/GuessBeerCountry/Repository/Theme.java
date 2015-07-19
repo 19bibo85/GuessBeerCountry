@@ -116,7 +116,7 @@ public class Theme {
     private static void SetStatsTheme(Context context) {
         int[] appThemeColor = SetTheme(context);
         if (appThemeColor.length == AppConfig.THEME_SIZE) {
-            Statistics.Back.setBackgroundResource(appThemeColor[1]);
+            Stats.Back.setBackgroundResource(appThemeColor[1]);
         }
     }
 

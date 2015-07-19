@@ -46,8 +46,6 @@ public class Stats extends SherlockActivity{
 	public static TextView LeastRange;	
 	public static Button Back;
 	
-	//private static final String DEFAULT_STRING = "0";
-
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.stats);

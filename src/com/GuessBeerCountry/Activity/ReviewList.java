@@ -26,7 +26,7 @@ public class ReviewList extends SherlockActivity{
 	        Utility.SetActionBar(actionBar, this);
 	        Log.i(TAG, "Setting ACTIONBAR.");
 	        
-	        ArrayList<Review> reviewList = GameActivity.ReviewList;
+	        ArrayList<Review> reviewList = Game.ReviewList;
 	        Log.i(TAG, "Populating Review List.");
 	        
 	        final ListView reviewListView = (ListView) findViewById(R.id.ListView);

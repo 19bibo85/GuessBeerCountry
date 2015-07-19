@@ -165,38 +165,38 @@ public class RetrieveData {
     	sharedPref = GetSharedInstance(activity);
 
         if (sharedPref != null) {
-        	Stats.AllBeers.setText(sharedPref.getString(AppConfig.STATS_ALL_BEERS_DEF, 
-        			AppConfig.STATS_RETRIEVE_ALL_BEERS_DEF));
+        	Stats.AllBeers.setText(sharedPref.getString(AppConfig.STATS_ALL_BEERS_LABEL_DEF, 
+        			AppConfig.STATS_DEFAULT_VALUE));
         	
-    		Stats.CorrAns.setText(sharedPref.getString(AppConfig.STATS_CORRECT_ANSWERS_DEF, 
-        			AppConfig.STATS_RETRIEVE_CORRECT_ANSWERS_DEF));
+    		Stats.CorrAns.setText(sharedPref.getString(AppConfig.STATS_CORRECT_ANSWERS_LABEL_DEF, 
+        			AppConfig.STATS_DEFAULT_VALUE));
     		
-    		Stats.WrgAns.setText(sharedPref.getString(AppConfig.STATS_WRONG_ANSWERS_DEF, 
-        			AppConfig.STATS_RETRIEVE_WRONG_ANSWERS_DEF));
+    		Stats.WrgAns.setText(sharedPref.getString(AppConfig.STATS_WRONG_ANSWERS_LABEL_DEF, 
+        			AppConfig.STATS_DEFAULT_VALUE));
     		
-    		Stats.MostBeer.setText(sharedPref.getString(AppConfig.STATS_MOST_BEER_DEF, 
-        			AppConfig.STATS_RETRIEVE_MOST_BEER_DEF));
+    		Stats.MostBeer.setText(sharedPref.getString(AppConfig.STATS_MOST_BEER_LABEL_DEF, 
+        			AppConfig.STATS_DEFAULT_VALUE));
     		
-    		Stats.LeastBeer.setText(sharedPref.getString(AppConfig.STATS_LEAST_BEER_DEF, 
-        			AppConfig.STATS_RETRIEVE_LEAST_BEER_DEF));
+    		Stats.LeastBeer.setText(sharedPref.getString(AppConfig.STATS_LEAST_BEER_LABEL_DEF, 
+        			AppConfig.STATS_DEFAULT_VALUE));
     		
-    		Stats.MostLang.setText(sharedPref.getString(AppConfig.STATS_MOST_LANG_DEF, 
-        			AppConfig.STATS_RETRIEVE_MOST_LANG_DEF));
+    		Stats.MostLang.setText(sharedPref.getString(AppConfig.STATS_MOST_LANG_LABEL_DEF, 
+        			AppConfig.STATS_DEFAULT_VALUE));
     		
-    		Stats.LeastLang.setText(sharedPref.getString(AppConfig.STATS_LEAST_LANG_DEF, 
-        			AppConfig.STATS_RETRIEVE_LEAST_LANG_DEF));
+    		Stats.LeastLang.setText(sharedPref.getString(AppConfig.STATS_LEAST_LANG_LABEL_DEF, 
+        			AppConfig.STATS_DEFAULT_VALUE));
     		
-    		Stats.MostTheme.setText(sharedPref.getString(AppConfig.STATS_MOST_THEME_DEF, 
-        			AppConfig.STATS_RETRIEVE_MOST_THEME_DEF));
+    		Stats.MostTheme.setText(sharedPref.getString(AppConfig.STATS_MOST_THEME_LABEL_DEF, 
+        			AppConfig.STATS_DEFAULT_VALUE));
     		
-    		Stats.LeastTheme.setText(sharedPref.getString(AppConfig.STATS_LEAST_THEME_DEF, 
-        			AppConfig.STATS_RETRIEVE_LEAST_THEME_DEF));
+    		Stats.LeastTheme.setText(sharedPref.getString(AppConfig.STATS_LEAST_THEME_LABEL_DEF, 
+        			AppConfig.STATS_DEFAULT_VALUE));
     		
-    		Stats.MostRange.setText(sharedPref.getString(AppConfig.STATS_MOST_RANGE_DEF, 
-        			AppConfig.STATS_RETRIEVE_MOST_RANGE_DEF));
+    		Stats.MostRange.setText(sharedPref.getString(AppConfig.STATS_MOST_RANGE_LABEL_DEF, 
+        			AppConfig.STATS_DEFAULT_VALUE));
     		
-    		Stats.LeastRange.setText(sharedPref.getString(AppConfig.STATS_LEAST_RANGE_DEF, 
-        			AppConfig.STATS_RETRIEVE_LEAST_RANGE_DEF));
+    		Stats.LeastRange.setText(sharedPref.getString(AppConfig.STATS_LEAST_RANGE_LABEL_DEF, 
+        			AppConfig.STATS_DEFAULT_VALUE));
     		
     		if (activity.getIntent() != null) {
                 ArrayList<String> obj = activity.getIntent()

@@ -178,7 +178,7 @@ public class BestScore extends SherlockActivity {
     }
 
     private void statsActivity() {
-        Intent intent = new Intent(this, MainStatisticsActivity.class);
+        Intent intent = new Intent(this, Stats.class);
         intent.putExtra("Transition", true);
         startActivity(intent);
         Log.i(TAG, "MAIN Statistics activity is started.");

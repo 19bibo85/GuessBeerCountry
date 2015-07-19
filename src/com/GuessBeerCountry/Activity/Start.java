@@ -159,7 +159,7 @@ public class Start extends SherlockActivity {
 
     public void gameActivity(GameMode mode, Object obj) {
         if (obj instanceof ArrayList<?>) {
-            Intent intent = new Intent(this, GameActivity.class);
+            Intent intent = new Intent(this, Game.class);
             startActivity(intent);
             Log.i(TAG, "GAME activity is started.");
         }

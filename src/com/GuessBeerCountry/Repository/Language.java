@@ -225,6 +225,93 @@ public class Language {
     }
 
     private static void SetStats(Context context) {
+    	Object[] prefs = Utility.GetSharedPreference(context);
+    	
+    	TextView labAllBeers = Stats.LabAllBeers;
+    	labAllBeers.setText(AppConfig.STATS_ALL_BEERS_LABEL_DEF);
+
+    	TextView allBeers = Stats.AllBeers;
+    	allBeers.setText(AppConfig.STATS_ALL_BEERS_DEF);
+    	
+    	TextView labCorrAns = Stats.LabCorrAns;
+    	labCorrAns.setText(AppConfig.STATS_CORRECT_ANSWERS_LABEL_DEF);
+    	
+    	TextView corrAns = Stats.CorrAns;
+    	corrAns.setText(AppConfig.STATS_CORRECT_ANSWERS_DEF);
+    	    	
+    	TextView labWrgAns = Stats.LabWrgAns;
+    	labWrgAns.setText(AppConfig.STATS_WRONG_ANSWERS_LABEL_DEF);
+    	
+    	TextView wrgAns = Stats.WrgAns;
+    	wrgAns.setText(AppConfig.STATS_WRONG_ANSWERS_DEF);
+    	
+    	TextView labMostBeer = Stats.LabMostBeer;
+    	labMostBeer.setText(AppConfig.STATS_MOST_BEER_LABEL_DEF);
+    	
+    	TextView mostBeer = Stats.MostBeer;
+    	mostBeer.setText(AppConfig.STATS_MOST_BEER_DEF);
+    	
+    	TextView labLeastBeer = Stats.LabLeastBeer;
+    	labLeastBeer.setText(AppConfig.STATS_LEAST_BEER_LABEL_DEF);
+    	
+    	TextView leastBeer = Stats.LeastBeer;
+    	leastBeer.setText(AppConfig.STATS_LEAST_BEER_DEF);
+    	
+    	TextView labMostLang = Stats.LabMostLang;
+    	labMostLang.setText(AppConfig.STATS_MOST_LANG_LABEL_DEF);
+    	
+    	TextView mostLang = Stats.MostLang;
+    	mostLang.setText(AppConfig.STATS_MOST_LANG_DEF);
+    	
+    	TextView labLeastLang = Stats.LabLeastLang;
+    	labLeastLang.setText(AppConfig.STATS_LEAST_LANG_LABEL_DEF);
+    	
+    	TextView LeastLang = Stats.LeastLang;
+    	LeastLang.setText(AppConfig.STATS_LEAST_LANG_DEF);
+    	
+    	TextView labMostTheme = Stats.LabMostTheme;
+    	labMostTheme.setText(AppConfig.STATS_MOST_THEME_LABEL_DEF);
+    	
+    	TextView mostTheme = Stats.MostTheme;
+    	mostTheme.setText(AppConfig.STATS_MOST_THEME_DEF);
+    	
+    	TextView labLeastTheme = Stats.LabLeastTheme;
+    	labLeastTheme.setText(AppConfig.STATS_LEAST_THEME_LABEL_DEF);
+    	
+    	TextView leastTheme = Stats.LeastTheme;
+    	leastTheme.setText(AppConfig.STATS_LEAST_THEME_DEF);
+    	
+    	TextView labMostRange = Stats.LabMostRange;
+    	labMostRange.setText(AppConfig.STATS_MOST_THEME_LABEL_DEF);
+    	
+    	TextView mostRange = Stats.MostRange;
+    	mostRange.setText(AppConfig.STATS_MOST_THEME_DEF);
+    	
+    	TextView labLeastRange = Stats.LabLeastRange;
+    	labLeastRange.setText(AppConfig.STATS_LEAST_RANGE_LABEL_DEF);
+    	
+    	TextView leastRange = Stats.LeastRange;
+    	leastRange.setText(AppConfig.STATS_LEAST_RANGE_DEF);
+
+        if (prefs.length == AppConfig.PREFERENCE) {
+            String[] strings = GetStringArray(ComponentName.Stats,
+                    context,
+                    prefs[AppConfig.PREF_LANGUAGE_INDEX].toString(),
+                    AppConfig.STATS_LANGUAGE_SIZE);
+            if (strings != null) {
+                                               
+            	labAllBeers.setText(AppConfig.STATS_ALL_BEERS_LABEL_INDEX);
+            	labCorrAns.setText(AppConfig.STATS_CORRECT_ANSWERS_LABEL_INDEX);
+            	labMostBeer.setText(AppConfig.STATS_MOST_BEER_LABEL_INDEX);
+            	labLeastBeer.setText(AppConfig.STATS_LEAST_BEER_LABEL_DEF);
+            	labMostLang.setText(AppConfig.STATS_MOST_LANG_LABEL_DEF);
+            	labLeastLang.setText(AppConfig.STATS_LEAST_LANG_LABEL_DEF);
+            	labMostTheme.setText(AppConfig.STATS_MOST_THEME_LABEL_DEF);
+            	labLeastTheme.setText(AppConfig.STATS_LEAST_THEME_LABEL_DEF);
+            	labMostRange.setText(AppConfig.STATS_MOST_THEME_DEF);
+            	labLeastRange.setText(AppConfig.STATS_LEAST_RANGE_DEF);                
+            }
+        }
 
     }
 

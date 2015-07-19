@@ -221,7 +221,7 @@ public class Score extends SherlockActivity {
     }
 
     public void reviewActivity() {
-        Intent intent = new Intent(this, ReviewActivity.class);
+        Intent intent = new Intent(this, ReviewList.class);
         intent.putExtra("Transition", true);
         startActivity(intent);
         Log.i(TAG, "Review activity is started.");
