@@ -1,18 +1,11 @@
 package com.GuessBeerCountry.Task;
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.util.Log;
 
 import com.GuessBeerCountry.Activity.Main;
 import com.GuessBeerCountry.Database.DatabaseHelper;
-import com.GuessBeerCountry.Repository.AppConfig;
 import com.GuessBeerCountry.Repository.Query;
-import com.GuessBeerCountry.Repository.Utility;
-
-import java.util.ArrayList;
-
 /**
  * Created by Alberto Tosi Brandi on 15/03/2015.
  */

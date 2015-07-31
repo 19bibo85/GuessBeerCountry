@@ -1,18 +1,12 @@
 package com.GuessBeerCountry.Activity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.GuessBeerCountry.R;
-import com.GuessBeerCountry.Fragment.SettingF;
 import com.GuessBeerCountry.Repository.ComponentName;
-import com.GuessBeerCountry.Repository.Language;
-import com.GuessBeerCountry.Repository.Title;
 import com.GuessBeerCountry.Repository.Utility;
 import com.actionbarsherlock.app.SherlockActivity;
-import com.actionbarsherlock.app.SherlockPreferenceActivity;
 
 /**
  * Created by Tosi Brandi on 18/03/2015.
@@ -35,7 +29,7 @@ public class Setting extends SherlockActivity {
     }
 
     private void settingFragment() {
-        Intent intent = new Intent(this, SettingF.class);
+        Intent intent = new Intent(this, com.GuessBeerCountry.Fragment.Setting.class);
         startActivity(intent);
         Log.i(TAG, "Setting Transition.");
         Utility.SetTransition(ComponentName.Setting, this);

@@ -8,310 +8,316 @@
 package com.GuessBeerCountry;
 
 public final class R {
+    public static final class anim {
+        public static final int animation_enter_back=0x7f040000;
+        public static final int animation_enter_foward=0x7f040001;
+        public static final int animation_leave_back=0x7f040002;
+        public static final int animation_leave_foward=0x7f040003;
+    }
     public static final class array {
         /**  ABOUT 
  en 
          */
-        public static final int about_en=0x7f060056;
+        public static final int about_en=0x7f080056;
         /**  es 
          */
-        public static final int about_es=0x7f060058;
+        public static final int about_es=0x7f080058;
         /**  fr 
          */
-        public static final int about_fr=0x7f060059;
+        public static final int about_fr=0x7f080059;
         /**  it 
          */
-        public static final int about_it=0x7f060057;
+        public static final int about_it=0x7f080057;
         /**  pt 
          */
-        public static final int about_pt=0x7f06005a;
+        public static final int about_pt=0x7f08005a;
         /**  BEST SCORE 
  en 
          */
-        public static final int best_score_en=0x7f060014;
+        public static final int best_score_en=0x7f080014;
         /**  es 
          */
-        public static final int best_score_es=0x7f060016;
+        public static final int best_score_es=0x7f080016;
         /**  fr 
          */
-        public static final int best_score_fr=0x7f060017;
+        public static final int best_score_fr=0x7f080017;
         /**  it 
          */
-        public static final int best_score_it=0x7f060015;
+        public static final int best_score_it=0x7f080015;
         /**  pt 
          */
-        public static final int best_score_pt=0x7f060018;
+        public static final int best_score_pt=0x7f080018;
         /**  Clear Message 
  en 
          */
-        public static final int clear_message_en=0x7f06003d;
+        public static final int clear_message_en=0x7f08003d;
         /**  es 
          */
-        public static final int clear_message_es=0x7f06003f;
+        public static final int clear_message_es=0x7f08003f;
         /**  fr 
          */
-        public static final int clear_message_fr=0x7f060040;
+        public static final int clear_message_fr=0x7f080040;
         /**  it 
          */
-        public static final int clear_message_it=0x7f06003e;
+        public static final int clear_message_it=0x7f08003e;
         /**  pt 
          */
-        public static final int clear_message_pt=0x7f060041;
+        public static final int clear_message_pt=0x7f080041;
         /**  MAIN 
  en 
          */
-        public static final int main_en=0x7f06000a;
+        public static final int main_en=0x7f08000a;
         /**  es 
          */
-        public static final int main_es=0x7f06000c;
+        public static final int main_es=0x7f08000c;
         /**  fr 
          */
-        public static final int main_fr=0x7f06000d;
+        public static final int main_fr=0x7f08000d;
         /**  it 
          */
-        public static final int main_it=0x7f06000b;
+        public static final int main_it=0x7f08000b;
         /**  MAIN LIST 
  en 
          */
-        public static final int main_list_en=0x7f06005b;
+        public static final int main_list_en=0x7f08005b;
         /**  es 
          */
-        public static final int main_list_es=0x7f06005d;
+        public static final int main_list_es=0x7f08005d;
         /**  fr 
          */
-        public static final int main_list_fr=0x7f06005e;
+        public static final int main_list_fr=0x7f08005e;
         /**  it 
          */
-        public static final int main_list_it=0x7f06005c;
+        public static final int main_list_it=0x7f08005c;
         /**  pt 
          */
-        public static final int main_list_pt=0x7f06005f;
+        public static final int main_list_pt=0x7f08005f;
         /**  pt 
          */
-        public static final int main_pt=0x7f06000e;
+        public static final int main_pt=0x7f08000e;
         /**  MAIN STATISTICS 
  en 
          */
-        public static final int main_statistics_en=0x7f060047;
+        public static final int main_statistics_en=0x7f080047;
         /**  es 
          */
-        public static final int main_statistics_es=0x7f060049;
+        public static final int main_statistics_es=0x7f080049;
         /**  fr 
          */
-        public static final int main_statistics_fr=0x7f06004a;
+        public static final int main_statistics_fr=0x7f08004a;
         /**  it 
          */
-        public static final int main_statistics_it=0x7f060048;
+        public static final int main_statistics_it=0x7f080048;
         /**  pt 
          */
-        public static final int main_statistics_pt=0x7f06004b;
+        public static final int main_statistics_pt=0x7f08004b;
         /**  en 
          */
-        public static final int score_en=0x7f060042;
+        public static final int score_en=0x7f080042;
         /**  es 
          */
-        public static final int score_es=0x7f060044;
+        public static final int score_es=0x7f080044;
         /**  fr 
          */
-        public static final int score_fr=0x7f060045;
+        public static final int score_fr=0x7f080045;
         /**  it 
          */
-        public static final int score_it=0x7f060043;
+        public static final int score_it=0x7f080043;
         /**  pt 
          */
-        public static final int score_pt=0x7f060046;
+        public static final int score_pt=0x7f080046;
         /**  SERVER ERROR 
  en 
          */
-        public static final int server_error_en=0x7f060051;
+        public static final int server_error_en=0x7f080051;
         /**  es 
          */
-        public static final int server_error_es=0x7f060053;
+        public static final int server_error_es=0x7f080053;
         /**  fr 
          */
-        public static final int server_error_fr=0x7f060054;
+        public static final int server_error_fr=0x7f080054;
         /**  it 
          */
-        public static final int server_error_it=0x7f060052;
+        public static final int server_error_it=0x7f080052;
         /**  pt 
          */
-        public static final int server_error_pt=0x7f060055;
+        public static final int server_error_pt=0x7f080055;
         /**  SETTING 
  Language 
          */
-        public static final int setting_language=0x7f060019;
-        public static final int setting_language_val=0x7f06001a;
+        public static final int setting_language=0x7f080019;
+        public static final int setting_language_val=0x7f08001a;
         /**  Range 
  en 
          */
-        public static final int setting_range_en=0x7f060021;
+        public static final int setting_range_en=0x7f080021;
         /**  es 
          */
-        public static final int setting_range_es=0x7f060023;
+        public static final int setting_range_es=0x7f080023;
         /**  fr 
          */
-        public static final int setting_range_fr=0x7f060024;
+        public static final int setting_range_fr=0x7f080024;
         /**  it 
          */
-        public static final int setting_range_it=0x7f060022;
+        public static final int setting_range_it=0x7f080022;
         /**  pt 
          */
-        public static final int setting_range_pt=0x7f060025;
+        public static final int setting_range_pt=0x7f080025;
         /**  values 
          */
-        public static final int setting_range_val=0x7f060026;
+        public static final int setting_range_val=0x7f080026;
         /**  Sound 
  en 
          */
-        public static final int setting_sound_en=0x7f06002d;
+        public static final int setting_sound_en=0x7f08002d;
         /**  es 
          */
-        public static final int setting_sound_es=0x7f06002f;
+        public static final int setting_sound_es=0x7f08002f;
         /**  fr 
          */
-        public static final int setting_sound_fr=0x7f060030;
+        public static final int setting_sound_fr=0x7f080030;
         /**  it 
          */
-        public static final int setting_sound_it=0x7f06002e;
+        public static final int setting_sound_it=0x7f08002e;
         /**  pt 
          */
-        public static final int setting_sound_pt=0x7f060031;
+        public static final int setting_sound_pt=0x7f080031;
         /**  values 
          */
-        public static final int setting_sound_val=0x7f060032;
+        public static final int setting_sound_val=0x7f080032;
         /**  Summary 
  en 
          */
-        public static final int setting_summary_en=0x7f060038;
+        public static final int setting_summary_en=0x7f080038;
         /**  es 
          */
-        public static final int setting_summary_es=0x7f06003a;
+        public static final int setting_summary_es=0x7f08003a;
         /**  fr 
          */
-        public static final int setting_summary_fr=0x7f06003b;
+        public static final int setting_summary_fr=0x7f08003b;
         /**  it 
          */
-        public static final int setting_summary_it=0x7f060039;
+        public static final int setting_summary_it=0x7f080039;
         /**  pt 
          */
-        public static final int setting_summary_pt=0x7f06003c;
+        public static final int setting_summary_pt=0x7f08003c;
         /**  Theme 
  en 
          */
-        public static final int setting_theme_en=0x7f06001b;
+        public static final int setting_theme_en=0x7f08001b;
         /**  es 
          */
-        public static final int setting_theme_es=0x7f06001d;
+        public static final int setting_theme_es=0x7f08001d;
         /**  fr 
          */
-        public static final int setting_theme_fr=0x7f06001e;
+        public static final int setting_theme_fr=0x7f08001e;
         /**  it 
          */
-        public static final int setting_theme_it=0x7f06001c;
+        public static final int setting_theme_it=0x7f08001c;
         /**  pt 
          */
-        public static final int setting_theme_pt=0x7f06001f;
+        public static final int setting_theme_pt=0x7f08001f;
         /**  values 
          */
-        public static final int setting_theme_val=0x7f060020;
+        public static final int setting_theme_val=0x7f080020;
         /**  Title 
  en 
          */
-        public static final int setting_title_en=0x7f060033;
+        public static final int setting_title_en=0x7f080033;
         /**  es 
          */
-        public static final int setting_title_es=0x7f060035;
+        public static final int setting_title_es=0x7f080035;
         /**  fr 
          */
-        public static final int setting_title_fr=0x7f060036;
+        public static final int setting_title_fr=0x7f080036;
         /**  it 
          */
-        public static final int setting_title_it=0x7f060034;
+        public static final int setting_title_it=0x7f080034;
         /**  pt 
          */
-        public static final int setting_title_pt=0x7f060037;
+        public static final int setting_title_pt=0x7f080037;
         /**  Update 
  en 
          */
-        public static final int setting_update_en=0x7f060027;
+        public static final int setting_update_en=0x7f080027;
         /**  es 
          */
-        public static final int setting_update_es=0x7f060029;
+        public static final int setting_update_es=0x7f080029;
         /**  fr 
          */
-        public static final int setting_update_fr=0x7f06002a;
+        public static final int setting_update_fr=0x7f08002a;
         /**  it 
          */
-        public static final int setting_update_it=0x7f060028;
+        public static final int setting_update_it=0x7f080028;
         /**  pt 
          */
-        public static final int setting_update_pt=0x7f06002b;
+        public static final int setting_update_pt=0x7f08002b;
         /**  values 
          */
-        public static final int setting_update_val=0x7f06002c;
+        public static final int setting_update_val=0x7f08002c;
         /**  en 
          */
-        public static final int splash_alert_message_en=0x7f060005;
+        public static final int splash_alert_message_en=0x7f080005;
         /**  es 
          */
-        public static final int splash_alert_message_es=0x7f060007;
+        public static final int splash_alert_message_es=0x7f080007;
         /**  fr 
          */
-        public static final int splash_alert_message_fr=0x7f060008;
+        public static final int splash_alert_message_fr=0x7f080008;
         /**  it 
          */
-        public static final int splash_alert_message_it=0x7f060006;
+        public static final int splash_alert_message_it=0x7f080006;
         /**  pt 
          */
-        public static final int splash_alert_message_pt=0x7f060009;
+        public static final int splash_alert_message_pt=0x7f080009;
         /**  SPALSHSCREEN 
  en 
          */
-        public static final int splash_en=0x7f060000;
+        public static final int splash_en=0x7f080000;
         /**  es 
          */
-        public static final int splash_es=0x7f060002;
+        public static final int splash_es=0x7f080002;
         /**  fr 
          */
-        public static final int splash_fr=0x7f060003;
+        public static final int splash_fr=0x7f080003;
         /**  it 
          */
-        public static final int splash_it=0x7f060001;
+        public static final int splash_it=0x7f080001;
         /**  pt 
          */
-        public static final int splash_pt=0x7f060004;
+        public static final int splash_pt=0x7f080004;
         /**  START 
  en 
          */
-        public static final int start_en=0x7f06000f;
+        public static final int start_en=0x7f08000f;
         /**  es 
          */
-        public static final int start_es=0x7f060011;
+        public static final int start_es=0x7f080011;
         /**  fr 
          */
-        public static final int start_fr=0x7f060012;
+        public static final int start_fr=0x7f080012;
         /**  it 
          */
-        public static final int start_it=0x7f060010;
+        public static final int start_it=0x7f080010;
         /**  pt 
          */
-        public static final int start_pt=0x7f060013;
+        public static final int start_pt=0x7f080013;
         /**  STATISTICS 
  en 
          */
-        public static final int statistics_en=0x7f06004c;
+        public static final int statistics_en=0x7f08004c;
         /**  es 
          */
-        public static final int statistics_es=0x7f06004e;
+        public static final int statistics_es=0x7f08004e;
         /**  fr 
          */
-        public static final int statistics_fr=0x7f06004f;
+        public static final int statistics_fr=0x7f08004f;
         /**  it 
          */
-        public static final int statistics_it=0x7f06004d;
+        public static final int statistics_it=0x7f08004d;
         /**  pt 
          */
-        public static final int statistics_pt=0x7f060050;
+        public static final int statistics_pt=0x7f080050;
     }
     public static final class attr {
     }
@@ -460,194 +466,202 @@ public final class R {
         public static final int zywiec_001=0x7f02008d;
     }
     public static final class id {
-        public static final int ListView=0x7f090021;
-        public static final int Main=0x7f090022;
-        public static final int Statistics=0x7f09003c;
-        public static final int acknowledge=0x7f090008;
-        public static final int action_about=0x7f090059;
-        public static final int action_settings=0x7f090058;
-        public static final int all_beers=0x7f09003e;
-        public static final int all_plates=0x7f090019;
-        public static final int back=0x7f090009;
-        public static final int best_score=0x7f09000b;
-        public static final int corr_ans=0x7f090040;
-        public static final int correct_answer=0x7f09002d;
-        public static final int developer=0x7f090006;
-        public static final int easy=0x7f09000d;
-        public static final int game_over=0x7f09002c;
-        public static final int hard=0x7f090015;
-        public static final int image=0x7f090027;
-        public static final int image_plate=0x7f090002;
-        public static final int lab_acknowledge=0x7f090007;
-        public static final int lab_all_beers=0x7f09003d;
-        public static final int lab_corr_ans=0x7f09003f;
-        public static final int lab_developer=0x7f090005;
-        public static final int lab_leas_lang=0x7f09004a;
-        public static final int lab_leas_range=0x7f090054;
-        public static final int lab_leas_theme=0x7f09004f;
-        public static final int lab_least_beer=0x7f090045;
-        public static final int lab_least_lang=0x7f090049;
-        public static final int lab_least_range=0x7f090053;
-        public static final int lab_least_theme=0x7f09004e;
-        public static final int lab_most_beer=0x7f090043;
-        public static final int lab_most_lang=0x7f090047;
-        public static final int lab_most_range=0x7f090051;
-        public static final int lab_most_theme=0x7f09004c;
-        public static final int lab_version=0x7f090003;
-        public static final int lab_wrg_ans=0x7f090041;
-        public static final int least_beer=0x7f090046;
-        public static final int least_lang=0x7f09004b;
-        public static final int least_range=0x7f090055;
-        public static final int least_theme=0x7f090050;
-        public static final int list=0x7f090024;
-        public static final int list_layout=0x7f090026;
-        public static final int loading=0x7f090039;
-        public static final int logo=0x7f090001;
-        public static final int medium=0x7f090011;
-        public static final int most_beer=0x7f090044;
-        public static final int most_lang=0x7f090048;
-        public static final int most_range=0x7f090052;
-        public static final int most_theme=0x7f09004d;
-        public static final int name=0x7f090038;
-        public static final int name1=0x7f090028;
-        public static final int name2=0x7f090029;
-        public static final int name3=0x7f09002a;
-        public static final int name4=0x7f09002b;
-        public static final int no_fault=0x7f09001d;
-        public static final int no_time_limit=0x7f09003b;
-        public static final int number_correct_answer=0x7f09002e;
-        public static final int number_wrong_answer=0x7f090031;
-        public static final int point=0x7f090033;
-        public static final int point_correct_answer=0x7f09002f;
-        public static final int point_value=0x7f090034;
-        public static final int point_wrong_answer=0x7f090032;
-        public static final int rate=0x7f090035;
-        public static final int rate_all_plates=0x7f09001b;
-        public static final int rate_easy=0x7f09000f;
-        public static final int rate_hard=0x7f090017;
-        public static final int rate_medium=0x7f090013;
-        public static final int rate_no_fault=0x7f09001f;
-        public static final int rate_value=0x7f090036;
-        public static final int review=0x7f090037;
-        public static final int score_all_plates=0x7f09001a;
-        public static final int score_easy=0x7f09000e;
-        public static final int score_hard=0x7f090016;
-        public static final int score_medium=0x7f090012;
-        public static final int score_no_fault=0x7f09001e;
-        public static final int scroll_view=0x7f090000;
-        public static final int setting=0x7f090025;
-        public static final int start=0x7f090023;
-        public static final int stats=0x7f090020;
-        public static final int tableRow1=0x7f09000a;
-        public static final int tableRow2=0x7f09000c;
-        public static final int tableRow3=0x7f090010;
-        public static final int tableRow4=0x7f090014;
-        public static final int tableRow5=0x7f090018;
-        public static final int tableRow6=0x7f09001c;
-        public static final int text=0x7f090057;
-        public static final int time_limit=0x7f09003a;
-        public static final int toast_layout=0x7f090056;
-        public static final int version=0x7f090004;
-        public static final int wrg_ans=0x7f090042;
-        public static final int wrong_answer=0x7f090030;
+        public static final int ListView=0x7f0b0021;
+        public static final int Main=0x7f0b0022;
+        public static final int Statistics=0x7f0b003c;
+        public static final int acknowledge=0x7f0b0008;
+        public static final int action_about=0x7f0b0059;
+        public static final int action_settings=0x7f0b0058;
+        public static final int all_beers=0x7f0b003e;
+        public static final int all_plates=0x7f0b0019;
+        public static final int back=0x7f0b0009;
+        public static final int best_score=0x7f0b000b;
+        public static final int corr_ans=0x7f0b0040;
+        public static final int correct_answer=0x7f0b002d;
+        public static final int developer=0x7f0b0006;
+        public static final int easy=0x7f0b000d;
+        public static final int game_over=0x7f0b002c;
+        public static final int hard=0x7f0b0015;
+        public static final int image=0x7f0b0027;
+        public static final int image_plate=0x7f0b0002;
+        public static final int lab_acknowledge=0x7f0b0007;
+        public static final int lab_all_beers=0x7f0b003d;
+        public static final int lab_corr_ans=0x7f0b003f;
+        public static final int lab_developer=0x7f0b0005;
+        public static final int lab_leas_lang=0x7f0b004a;
+        public static final int lab_leas_range=0x7f0b0054;
+        public static final int lab_leas_theme=0x7f0b004f;
+        public static final int lab_least_beer=0x7f0b0045;
+        public static final int lab_least_lang=0x7f0b0049;
+        public static final int lab_least_range=0x7f0b0053;
+        public static final int lab_least_theme=0x7f0b004e;
+        public static final int lab_most_beer=0x7f0b0043;
+        public static final int lab_most_lang=0x7f0b0047;
+        public static final int lab_most_range=0x7f0b0051;
+        public static final int lab_most_theme=0x7f0b004c;
+        public static final int lab_version=0x7f0b0003;
+        public static final int lab_wrg_ans=0x7f0b0041;
+        public static final int least_beer=0x7f0b0046;
+        public static final int least_lang=0x7f0b004b;
+        public static final int least_range=0x7f0b0055;
+        public static final int least_theme=0x7f0b0050;
+        public static final int list=0x7f0b0024;
+        public static final int list_layout=0x7f0b0026;
+        public static final int loading=0x7f0b0039;
+        public static final int logo=0x7f0b0001;
+        public static final int medium=0x7f0b0011;
+        public static final int most_beer=0x7f0b0044;
+        public static final int most_lang=0x7f0b0048;
+        public static final int most_range=0x7f0b0052;
+        public static final int most_theme=0x7f0b004d;
+        public static final int name=0x7f0b0038;
+        public static final int name1=0x7f0b0028;
+        public static final int name2=0x7f0b0029;
+        public static final int name3=0x7f0b002a;
+        public static final int name4=0x7f0b002b;
+        public static final int no_fault=0x7f0b001d;
+        public static final int no_time_limit=0x7f0b003b;
+        public static final int number_correct_answer=0x7f0b002e;
+        public static final int number_wrong_answer=0x7f0b0031;
+        public static final int point=0x7f0b0033;
+        public static final int point_correct_answer=0x7f0b002f;
+        public static final int point_value=0x7f0b0034;
+        public static final int point_wrong_answer=0x7f0b0032;
+        public static final int rate=0x7f0b0035;
+        public static final int rate_all_plates=0x7f0b001b;
+        public static final int rate_easy=0x7f0b000f;
+        public static final int rate_hard=0x7f0b0017;
+        public static final int rate_medium=0x7f0b0013;
+        public static final int rate_no_fault=0x7f0b001f;
+        public static final int rate_value=0x7f0b0036;
+        public static final int review=0x7f0b0037;
+        public static final int score_all_plates=0x7f0b001a;
+        public static final int score_easy=0x7f0b000e;
+        public static final int score_hard=0x7f0b0016;
+        public static final int score_medium=0x7f0b0012;
+        public static final int score_no_fault=0x7f0b001e;
+        public static final int scroll_view=0x7f0b0000;
+        public static final int setting=0x7f0b0025;
+        public static final int start=0x7f0b0023;
+        public static final int stats=0x7f0b0020;
+        public static final int tableRow1=0x7f0b000a;
+        public static final int tableRow2=0x7f0b000c;
+        public static final int tableRow3=0x7f0b0010;
+        public static final int tableRow4=0x7f0b0014;
+        public static final int tableRow5=0x7f0b0018;
+        public static final int tableRow6=0x7f0b001c;
+        public static final int text=0x7f0b0057;
+        public static final int time_limit=0x7f0b003a;
+        public static final int toast_layout=0x7f0b0056;
+        public static final int version=0x7f0b0004;
+        public static final int wrg_ans=0x7f0b0042;
+        public static final int wrong_answer=0x7f0b0030;
     }
     public static final class layout {
         public static final int about=0x7f030000;
         public static final int best_score=0x7f030001;
-        public static final int list=0x7f030002;
-        public static final int main=0x7f030003;
-        public static final int review_inflate=0x7f030004;
-        public static final int score=0x7f030005;
-        public static final int simple_inflate=0x7f030006;
-        public static final int splashscreen=0x7f030007;
-        public static final int start=0x7f030008;
-        public static final int stats=0x7f030009;
-        public static final int toast=0x7f03000a;
+        public static final int fadein=0x7f030002;
+        public static final int fadeout=0x7f030003;
+        public static final int list=0x7f030004;
+        public static final int main=0x7f030005;
+        public static final int review_inflate=0x7f030006;
+        public static final int score=0x7f030007;
+        public static final int simple_inflate=0x7f030008;
+        public static final int splashscreen=0x7f030009;
+        public static final int start=0x7f03000a;
+        public static final int stats=0x7f03000b;
+        public static final int toast=0x7f03000c;
     }
     public static final class menu {
-        public static final int activity_main_actions=0x7f080000;
+        public static final int activity_main_actions=0x7f0a0000;
+    }
+    public static final class raw {
+        public static final int applause=0x7f060000;
+        public static final int buzzer=0x7f060001;
+        public static final int shiny_ding=0x7f060002;
+        public static final int shwink=0x7f060003;
     }
     public static final class string {
         /**  ACNKOWLEDGEMENTS 
  en 
          */
-        public static final int acknowledgements_en=0x7f050006;
+        public static final int acknowledgements_en=0x7f070006;
         /**  es 
          */
-        public static final int acknowledgements_es=0x7f050008;
+        public static final int acknowledgements_es=0x7f070008;
         /**  fr 
          */
-        public static final int acknowledgements_fr=0x7f050009;
+        public static final int acknowledgements_fr=0x7f070009;
         /**  it 
          */
-        public static final int acknowledgements_it=0x7f050007;
+        public static final int acknowledgements_it=0x7f070007;
         /**  pt 
          */
-        public static final int acknowledgements_pt=0x7f05000a;
-        public static final int action_about=0x7f050003;
+        public static final int acknowledgements_pt=0x7f07000a;
+        public static final int action_about=0x7f070003;
         /**  ACTION BAR 
          */
-        public static final int action_settings=0x7f050002;
+        public static final int action_settings=0x7f070002;
         /**  Application name 
          */
-        public static final int app_name=0x7f050000;
-        public static final int main_Activity=0x7f050001;
+        public static final int app_name=0x7f070000;
+        public static final int main_Activity=0x7f070001;
         /**  SCORE 
  main 
          */
-        public static final int point_correct=0x7f050004;
-        public static final int point_wrong=0x7f050005;
+        public static final int point_correct=0x7f070004;
+        public static final int point_wrong=0x7f070005;
         /**  SCORE NEW RECORD 
          */
-        public static final int score_record_en=0x7f050010;
-        public static final int score_record_es=0x7f050012;
-        public static final int score_record_fr=0x7f050013;
-        public static final int score_record_it=0x7f050011;
-        public static final int score_record_pt=0x7f050014;
+        public static final int score_record_en=0x7f070010;
+        public static final int score_record_es=0x7f070012;
+        public static final int score_record_fr=0x7f070013;
+        public static final int score_record_it=0x7f070011;
+        public static final int score_record_pt=0x7f070014;
         /**  STATS ASYNC 
          */
-        public static final int stats_async_en=0x7f05000b;
-        public static final int stats_async_es=0x7f05000d;
-        public static final int stats_async_fr=0x7f05000e;
-        public static final int stats_async_it=0x7f05000c;
-        public static final int stats_async_pt=0x7f05000f;
+        public static final int stats_async_en=0x7f07000b;
+        public static final int stats_async_es=0x7f07000d;
+        public static final int stats_async_fr=0x7f07000e;
+        public static final int stats_async_it=0x7f07000c;
+        public static final int stats_async_pt=0x7f07000f;
     }
     public static final class style {
         /**  Button 
          */
-        public static final int button=0x7f070007;
+        public static final int button=0x7f090007;
         /**  Image 
          */
-        public static final int image=0x7f070009;
+        public static final int image=0x7f090009;
         /**  Layout 
          */
-        public static final int linear_layout=0x7f070001;
+        public static final int linear_layout=0x7f090001;
         /**  List Layout 
          */
-        public static final int list_layout=0x7f070002;
+        public static final int list_layout=0x7f090002;
         /**  Logo 
          */
-        public static final int logo=0x7f070008;
+        public static final int logo=0x7f090008;
         /**  Main Text view 
          */
-        public static final int main_text_view=0x7f070004;
+        public static final int main_text_view=0x7f090004;
         /**  Scroll 
          */
-        public static final int scroll_view=0x7f070000;
+        public static final int scroll_view=0x7f090000;
         /**  Table Layout 
          */
-        public static final int table_layout=0x7f070003;
+        public static final int table_layout=0x7f090003;
         /**  Table Row 
          */
-        public static final int table_row=0x7f070006;
+        public static final int table_row=0x7f090006;
         /**  Table Text View 
          */
-        public static final int table_text_view=0x7f070005;
+        public static final int table_text_view=0x7f090005;
         /**  Text View Simple List 
          */
-        public static final int text_view_inflate=0x7f07000a;
+        public static final int text_view_inflate=0x7f09000a;
     }
     public static final class xml {
-        public static final int preferences=0x7f040000;
+        public static final int preferences=0x7f050000;
     }
 }

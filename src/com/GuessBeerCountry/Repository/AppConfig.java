@@ -192,12 +192,15 @@ public class AppConfig {
     // General index and name
     public static final int STATS_LIST_GENERAL_INDEX = 0;
     public static final String STATS_LIST_GENERAL_DEF = "General";
+    public static final String STATS_LIST_GENERAL_IMG = "sta_001";
     // Time index and name
     public static final int STATS_LIST_TIME_INDEX = 1;
     public static final String STATS_LIST_TIME_DEF = "Time";
+    public static final String STATS_LIST_TIME_IMG = "sta_001";
     // No Time index and name
     public static final int STATS_LIST_NO_TIME_INDEX = 2;
     public static final String STATS_LIST_NO_TIME_DEF = "No Time";
+    public static final String STATS_LIST_NO_TIME_IMG = "sta_001";
 
     // ABOUT
     public static final int ABOUT_LANGUAGE_SIZE = 4;

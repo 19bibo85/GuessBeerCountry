@@ -5,7 +5,7 @@ import java.util.Locale;
 
 import com.GuessBeerCountry.Activity.Start;
 import com.GuessBeerCountry.Database.DatabaseHelper;
-import com.GuessBeerCountry.Model.BeerBase;
+import com.GuessBeerCountry.Model.Base;
 
 import android.app.Activity;
 import android.content.ContentValues;
@@ -203,9 +203,9 @@ public class Query {
         return numRows;
     }
 
-    // Retrieve list of beer to display
-    public static ArrayList<BeerBase> GetBeerList(String continent, Activity activity){
-    	ArrayList<BeerBase> beerList = new ArrayList<BeerBase>();
+    // Retrieve list of countries to display
+    public static ArrayList<Base> GetBaseList(String continent, Activity activity){
+    	ArrayList<Base> beerList = new ArrayList<Base>();
     	    	
     	//TODO: 
         String whereCond = !continent.equals("All") ?
@@ -220,7 +220,7 @@ public class Query {
         if (count > 0) {
             while (cursor.moveToNext()) {
                 String name = AppConfig.PREF_RANGE_DEF;
-                BeerBase beer = new BeerBase();
+                Base beer = new Base();
                 if (!cursor.isNull(0))
                     name = cursor.getString(0);
                 beer.SetName(name);
@@ -232,4 +232,13 @@ public class Query {
         return beerList;
     }    
 
+    // Retrieve list of beers to display
+    public static ArrayList<Base> GetBeerList(String continent, Activity activity){    	
+    	// Setting the condition for the where clause
+    	String where = " WHERE Continent = '" + continent + "'";
+    	where = where + " AND Plate.Version <> 0 AND Language.Version <> 0 ORDER BY Country, Name ASC";
+    	
+    	// Copy the list of the plate from the db that respect the condition above
+    	return GameUtility.CopyDbToList(new ArrayList<Base>(), activity.getBaseContext(), where);
+    }
 }

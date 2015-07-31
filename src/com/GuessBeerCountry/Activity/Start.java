@@ -22,6 +22,7 @@ import java.util.ArrayList;
  */
 public class Start extends SherlockActivity {
     private final static String TAG = "Main";
+    
     public static ScrollView ScrollView;
     public static TextView Easy;
     public static TextView Medium;

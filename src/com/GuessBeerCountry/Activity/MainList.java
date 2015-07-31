@@ -8,8 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.GuessBeerCountry.R;
-import com.GuessBeerCountry.Adapter.Beer;
-import com.GuessBeerCountry.Model.BeerBase;
+import com.GuessBeerCountry.Adapter.Base;
 import com.GuessBeerCountry.Repository.AppConfig;
 import com.GuessBeerCountry.Repository.ComponentName;
 import com.GuessBeerCountry.Repository.Query;
@@ -37,18 +36,18 @@ public class MainList extends SherlockActivity {
         	     
 	        Object[] sharedPreference = Utility.GetSharedPreference(this);	        
 	        if (sharedPreference.length == AppConfig.PREFERENCE) {
-	        	ArrayList<BeerBase> beerList = Query.GetBeerList(sharedPreference[AppConfig.PREF_RANGE_INDEX].toString(), this);	            
+	        	ArrayList<com.GuessBeerCountry.Model.Base> baseList = Query.GetBaseList(sharedPreference[AppConfig.PREF_RANGE_INDEX].toString(), this);	            
 	        	Log.i(TAG, "Populating Beer List.");
 		            
-	            final ListView beerListView = (ListView) findViewById(R.id.ListView);
-	            beerListView.setAdapter(new Beer(this, this.getBaseContext(), beerList, R.layout.simple_inflate));
+	            final ListView baseListView = (ListView) findViewById(R.id.ListView);
+	            baseListView.setAdapter(new Base(this, this.getBaseContext(), baseList, R.layout.simple_inflate));
 	            Log.i(TAG, "Getting the view from the list and attaching the strings in the list continents.");
 	            
-	            beerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+	            baseListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 	
 	                @Override
 	                public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
-	                    final BeerBase item = (BeerBase) parent.getItemAtPosition(position);
+	                    final com.GuessBeerCountry.Model.Base item = (com.GuessBeerCountry.Model.Base) parent.getItemAtPosition(position);
 	                    listActivity(item);
 	                }
 	            });
@@ -69,8 +68,8 @@ public class MainList extends SherlockActivity {
         Utility.SetTransition(ComponentName.MainList, this);
     }
 
-    private void listActivity(BeerBase item) {
-        Intent intent = new Intent(this, Beer.class);
+    private void listActivity(com.GuessBeerCountry.Model.Base item) {
+        Intent intent = new Intent(this, Base.class);
         intent.putExtra("Key", item.GetName());
         startActivity(intent);
     }    

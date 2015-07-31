@@ -3,20 +3,25 @@ package com.GuessBeerCountry.Repository;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.os.Build;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.widget.ImageView;
 
+import com.GuessBeerCountry.R;
 import com.GuessBeerCountry.Activity.SplashScreen;
 import com.GuessBeerCountry.Database.DatabaseHelper;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
-import com.actionbarsherlock.app.SherlockPreferenceActivity;
 
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Locale;
@@ -26,24 +31,109 @@ import java.util.Locale;
  */
 public class Utility {
 
-    public static void SetActionBar(ActionBar actionBar, SherlockActivity activity) {
-
+    public static <T> void SetActionBar(ActionBar actionBar,  Context context) {    	
+    	if(actionBar != null){
+			actionBar.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.title_background_lager));
+			actionBar.setDisplayShowTitleEnabled(false);
+			actionBar.setDisplayUseLogoEnabled(true);
+			actionBar.setLogo(context.getResources().getDrawable(R.drawable.logo));
+		}
     }
 
-    public static void SetActionBar(ActionBar actionBar, SherlockPreferenceActivity activity) {
-
+    public static void InitializeAudio(Context context) {
+    	if(answer == null)
+			answer = MediaPlayer.create(context, R.raw.shwink);
+    	GameUtility.CreateAudio(context);
     }
 
-    public static void InitializeAudio(Activity activity) {
+    private static MediaPlayer answer = null;
+    public static void SetAudio(Context context, boolean isActive, int audioEvent) {
+    	if (answer != null && isActive) {
+			int audioID = -1;
+			switch (audioEvent) {
+			case 0:
+				audioID = R.raw.shwink;
+				break;
+			case 1:
+				audioID = R.raw.applause;
+				break;
+			}
 
+			if (audioID != -1) {
+				try {
+					answer.reset();
+					AssetFileDescriptor afd = context.getResources().openRawResourceFd(audioID);
+					if (afd == null) return;
+					answer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
+					afd.close();
+					answer.prepare();
+				} catch (IllegalArgumentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IllegalStateException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+				if (answer.isPlaying())
+					answer.seekTo(0);
+				else
+					answer.start();
+			}
+		}
     }
-
-    public static void SetAudio(SherlockActivity activity, SoundName audioEvent) {
-
+    
+    public static void SetTransition(ComponentName componentName, Activity source) {
+    	if(source == null) return;
+    	Context context = source.getBaseContext();
+    	
+    	// Get Shared Preferences
+    	Object[] sharedPreference = GetSharedPreference(context);
+    	if(sharedPreference == null || (sharedPreference.length != AppConfig.PREFERENCE)) return;
+    	    	
+    	// Set Audio
+    	SetAudio(context, (boolean) sharedPreference[AppConfig.PREF_SOUND_INDEX], 0);    	
+		Intent intent = source.getIntent();
+		if(intent == null) return;
+		
+		// Get Flag
+		Bundle extras = intent.getExtras();
+		if(extras == null) return;
+				
+		// In case no transition flag is triggered do not perform any animation
+		Object isUpdating = intent.getExtras().get("NoTransition");
+		if(isUpdating != null && (Boolean)isUpdating){
+			CleanIntent(intent, "NoTransition", isUpdating);
+			return;					
+		}
+		
+		// Get the flag to check if user is entering in a new activity or is leaving an activity
+		Object isEntering = intent.getExtras().get(componentName.toString());
+		if(isEntering == null) isEntering = intent.getStringArrayListExtra(componentName.toString());
+		if(isEntering == null) return;
+		
+		// Set the animation to enter or to leave
+		int enterAnim = (Boolean) isEntering || isEntering != null ? R.anim.animation_enter_foward : R.anim.animation_enter_back;
+		int exitAnim = (Boolean) isEntering || isEntering != null ? R.anim.animation_leave_foward : R.anim.animation_leave_back;
+		
+		// In case the component name is main change the animation
+		if(componentName == ComponentName.Main){
+			enterAnim = (Boolean) isEntering || isEntering != null ? R.layout.fadein : R.anim.animation_enter_back;
+			exitAnim = (Boolean) isEntering || isEntering != null ? R.layout.fadeout : R.anim.animation_leave_back;
+		}	
+		
+		CleanIntent(intent, componentName.toString(), isEntering);
+		source.overridePendingTransition(enterAnim, exitAnim);
     }
-
-    public static void SetTransition(ComponentName name, Activity activity) {
-
+    
+    private static void CleanIntent(Intent intent, String componentName, Object transactionType){
+    	if((Boolean) transactionType != null)
+    		intent.putExtra(componentName, false);
+    	else
+    		intent.putStringArrayListExtra(componentName, null);
     }
 
     // Get the font

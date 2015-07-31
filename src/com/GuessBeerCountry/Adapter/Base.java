@@ -3,7 +3,6 @@ package com.GuessBeerCountry.Adapter;
 import java.util.ArrayList;
 
 import com.GuessBeerCountry.R;
-import com.GuessBeerCountry.Model.BeerBase;
 import com.GuessBeerCountry.Repository.Utility;
 import com.actionbarsherlock.app.SherlockActivity;
 
@@ -15,17 +14,17 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Beer extends ArrayAdapter<BeerBase>{
+public class Base extends ArrayAdapter<com.GuessBeerCountry.Model.Base>{
 	private final SherlockActivity activity;
 	private final Context context;
-	private final ArrayList<BeerBase> beerList;
+	private final ArrayList<com.GuessBeerCountry.Model.Base> baseList;
 	private int layout;	
 	
-	public Beer(SherlockActivity activity, Context context, ArrayList<BeerBase> beerList, int layout) {
-		super(context, layout, beerList);
+	public Base(SherlockActivity activity, Context context, ArrayList<com.GuessBeerCountry.Model.Base> baseList, int layout) {
+		super(context, layout, baseList);
 		this.activity = activity;
 		this.context = context;
-		this.beerList = beerList;
+		this.baseList = baseList;
 		this.layout = layout;
 	}
 	
@@ -38,29 +37,29 @@ public class Beer extends ArrayAdapter<BeerBase>{
 			LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			view = inflater.inflate(layout, parent, false);
 			holder = new ViewHolder();
-			holder.beerImage = (ImageView) view.findViewById(R.id.image);
-			holder.beerName = (TextView) view.findViewById(R.id.name);
+			holder.baseImage = (ImageView) view.findViewById(R.id.image);
+			holder.baseName = (TextView) view.findViewById(R.id.name);
 			view.setTag(holder);		
 		}else{
 			holder = (ViewHolder) view.getTag();
 		}
 		
 		// Setting the image
-		String beerImage = beerList.get(position).GetImgId();
-		int imgID = Utility.GetResId(beerImage, R.drawable.class);
-		holder.beerImage.setImageResource(imgID);
-		Utility.ScaleSizeForTablet(activity, holder.beerImage);
+		String baseImage = baseList.get(position).GetImgId();
+		int imgID = Utility.GetResId(baseImage, R.drawable.class);
+		holder.baseImage.setImageResource(imgID);
+		Utility.ScaleSizeForTablet(activity, holder.baseImage);
 		
 		// Setting the name
-		String beerName = beerList.get(position).GetLanguage();
-		holder.beerName.setText(beerName);
-		holder.beerName.setTypeface(Utility.GetFont(activity));
+		String baseName = baseList.get(position).GetLanguage();
+		holder.baseName.setText(baseName);
+		holder.baseName.setTypeface(Utility.GetFont(activity));
 				
 		return view;
 	}
 	
 	static class ViewHolder {
-	  ImageView beerImage;
-	  TextView beerName;
+	  ImageView baseImage;
+	  TextView baseName;
 	 }
 }

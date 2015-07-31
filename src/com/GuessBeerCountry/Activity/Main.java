@@ -192,7 +192,7 @@ public class Main extends SherlockActivity {
 
     private void startActivity() {
         Intent intent = new Intent(this, Start.class);
-        intent.putExtra("Transition", true);
+        intent.putExtra(ComponentName.Start.toString(), true);
         startActivity(intent);
         Log.i(TAG, "START activity is started.");
     }
@@ -200,7 +200,7 @@ public class Main extends SherlockActivity {
     public void bestScoreActivity(Object obj) {
         if (obj instanceof ArrayList<?>){
             Intent intent = new Intent(this, BestScore.class);
-            intent.putStringArrayListExtra("BestScore", (ArrayList<String>) obj);
+            intent.putStringArrayListExtra(ComponentName.BestScore.toString(), (ArrayList<String>) obj);
             startActivity(intent);
             Log.i(TAG, "BEST SCORE activity is started.");
         }
@@ -208,14 +208,14 @@ public class Main extends SherlockActivity {
 
     private void listActivity() {
         Intent intent = new Intent(this, MainList.class);
-        intent.putExtra("Transition", true);
+        intent.putExtra(ComponentName.MainList.toString(), true);
         startActivity(intent);
         Log.i(TAG, "LIST activity is started.");
     }
 
     private void settingActivity() {
         Intent intent = new Intent(this, Setting.class);
-        intent.putExtra("Transition", true);
+        intent.putExtra(ComponentName.Setting.toString(), true);
         startActivity(intent);
         Log.i(TAG, "SETTING activity is started.");
     }
@@ -223,7 +223,7 @@ public class Main extends SherlockActivity {
     public void aboutActivity(Object obj) {
         if (obj instanceof ArrayList<?>) {
             Intent intent = new Intent(this, About.class);
-            intent.putStringArrayListExtra("About", (ArrayList<String>) obj);
+            intent.putStringArrayListExtra(ComponentName.About.toString(), (ArrayList<String>) obj);
             startActivity(intent);
             Log.i(TAG, "ABOUT activity is started.");
         }

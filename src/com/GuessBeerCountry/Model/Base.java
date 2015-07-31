@@ -1,14 +1,14 @@
 package com.GuessBeerCountry.Model;
 
-public class BeerBase {
+public class Base {
 	private int id;
 	private String name;
 	private String language;
 	private String imgId;
 	
-	public BeerBase(){}
+	public Base(){}
 	
-	public BeerBase(int id, String name, String language, String imgId){
+	public Base(int id, String name, String language, String imgId){
 		this.id = id;
 		this.name = name;
 		this.language = language;
