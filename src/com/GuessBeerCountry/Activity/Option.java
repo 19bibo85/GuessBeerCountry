@@ -5,6 +5,7 @@ import com.GuessBeerCountry.Repository.CommitData;
 import com.GuessBeerCountry.Repository.ComponentName;
 import com.GuessBeerCountry.Repository.Utility;
 import com.GuessBeerCountry.Task.ScoreAsync;
+import com.GuessBeerCountry.Task.StatsAsync;
 
 import android.content.Context;
 import android.preference.DialogPreference;

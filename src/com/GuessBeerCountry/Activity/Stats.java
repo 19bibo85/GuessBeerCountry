@@ -185,5 +185,4 @@ public class Stats extends SherlockActivity{
 	    default: return super.onOptionsItemSelected(item);  
 	    }
 	}
-
 }

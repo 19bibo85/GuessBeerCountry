@@ -18,7 +18,7 @@ import com.GuessBeerCountry.Repository.ComponentName;
 import com.GuessBeerCountry.Repository.Language;
 import com.GuessBeerCountry.Repository.Title;
 import com.GuessBeerCountry.Repository.Utility;
-import com.GuessBeerCountry.Task.ScoreAsync;
+import com.GuessBeerCountry.Task.StatsAsync;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
 
@@ -75,7 +75,7 @@ public class StatsList extends SherlockActivity {
 	        	  int itemID = item != null ? item.GetId() : -1;
 	        	  
 	        	  DatabaseHelper databaseHelper = Utility.GetDataBaseHelper(getBaseContext());
-	        	  new StatsAsync(this, itemID).execute(databaseHelper);
+	        	  new StatsAsync(StatsList.this, itemID).execute(databaseHelper);
 	              Log.i(TAG, "Instancing Stats Task.");
 	          	}
 	        });
