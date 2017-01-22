@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class ScoreAsync extends AsyncTask<DatabaseHelper, Void, Object> {
     private final static String TAG = "ScoreAsync";
     private Main main = null;
-    private Game game = null;
+    //private Game game = null;
     private Option dialog = null;
         
     // Constructor for Best Scores
@@ -32,10 +32,10 @@ public class ScoreAsync extends AsyncTask<DatabaseHelper, Void, Object> {
     		this.main = (Main) activity;
             Log.i(TAG, "Assigning MAIN activity.");
     	}
-    	else if(activity instanceof Game){
-    		this.game = (Game) activity;
-            Log.i(TAG, "Assigning GAME activity.");
-    	}
+    	//else if(activity instanceof Game){
+    		//this.game = (Game) activity;
+            //Log.i(TAG, "Assigning GAME activity.");
+    	//}
     	else if(activity instanceof Option){
     		this.dialog = (Option) activity;
             Log.i(TAG, "Assigning DIALOG PREFERENCE activity.");
@@ -48,9 +48,9 @@ public class ScoreAsync extends AsyncTask<DatabaseHelper, Void, Object> {
         if (main != null) {
             Log.i(TAG, "Querying score table to retrieve scores.");
             result = Query.GetBestScores(databaseHelper[0]);
-        } else if (game != null) {
-            Log.i(TAG, "Querying score table to update score.");
-            result = Query.GetScore(databaseHelper[0]);
+        //} else if (game != null) {
+         //   Log.i(TAG, "Querying score table to update score.");
+        //    result = Query.GetScore(databaseHelper[0]);
         } else if (dialog != null) {
             Log.i(TAG, "Querying score table to clean up all scores.");
             result = Query.DeleteAllScores(databaseHelper[0]);
@@ -65,9 +65,9 @@ public class ScoreAsync extends AsyncTask<DatabaseHelper, Void, Object> {
         if (main != null) {
             main.bestScoreActivity(result);
             Log.i(TAG, "Starting BEST SCORES activity.");
-        } else if (game != null) {
-            game.scoreActivity(result);
-            Log.i(TAG, "Starting SCORE activity.");
+        //} else if (game != null) {
+        //    game.scoreActivity(result);
+        //    Log.i(TAG, "Starting SCORE activity.");
         } else if (dialog != null) {
             dialog.setNumRowScoDel(result);
             Log.i(TAG, "SCORES have been cleaned up.");

@@ -124,11 +124,11 @@ public class Theme {
     private static void SetGameLayoutTheme(Context context) {
         int[] appThemeColor = SetTheme(context);
         if (appThemeColor.length == AppConfig.THEME_SIZE) {
-            Game.ScrollView.setBackgroundResource(appThemeColor[AppConfig.THEME_BACKGROUND]);
-            Game.Button1.setBackgroundResource(appThemeColor[1]);
-            Game.Button2.setBackgroundResource(appThemeColor[1]);
-            Game.Button3.setBackgroundResource(appThemeColor[1]);
-            Game.Button4.setBackgroundResource(appThemeColor[1]);
+            //Game.ScrollView.setBackgroundResource(appThemeColor[AppConfig.THEME_BACKGROUND]);
+            //Game.Button1.setBackgroundResource(appThemeColor[1]);
+            //Game.Button2.setBackgroundResource(appThemeColor[1]);
+            //Game.Button3.setBackgroundResource(appThemeColor[1]);
+            //Game.Button4.setBackgroundResource(appThemeColor[1]);
         }
     }
 

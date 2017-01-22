@@ -43,7 +43,7 @@ public class Utility {
     public static void InitializeAudio(Context context) {
     	if(answer == null)
 			answer = MediaPlayer.create(context, R.raw.shwink);
-    	GameUtility.CreateAudio(context);
+    	//GameUtility.CreateAudio(context);
     }
 
     private static MediaPlayer answer = null;

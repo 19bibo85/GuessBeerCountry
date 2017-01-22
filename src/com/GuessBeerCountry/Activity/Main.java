@@ -123,7 +123,7 @@ public class Main extends SherlockActivity {
     @Override
     public void onResume() {
         super.onResume();
-        Log.i(TAG, "Setting Audio.");
+        /*Log.i(TAG, "Setting Audio.");
         Utility.InitializeAudio(this);
         Log.i(TAG, "Setting Transition.");
         Utility.SetTransition(ComponentName.Main, this);
@@ -147,7 +147,7 @@ public class Main extends SherlockActivity {
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 this.startActivity(intent);
             }
-        }
+        }*/
     }
 
     @Override

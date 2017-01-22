@@ -66,7 +66,7 @@ public class SplashAsync extends AsyncTask<DatabaseHelper, Integer, ServerError>
             this.loadingDialog.show();
         }
 
-        this.loadingDialog.setContentView(R.layout.custom_progress_dialog);
+        //this.loadingDialog.setContentView(R.layout.custom_progress_dialog);
     }
 
     @Override
@@ -74,13 +74,13 @@ public class SplashAsync extends AsyncTask<DatabaseHelper, Integer, ServerError>
         this.databaseHelper = params[0];
 
         // Setting the values of default
-        setDefaultValues();
+        //setDefaultValues();
 
         // Getting the shared preferences
-        Object[] sharedPreference = Utility.GetSharedPreference(activity);
-        boolean hasToBeUpdated = sharedPreference.length == AppConfig.PREFERENCE ? (Boolean) sharedPreference[AppConfig.PREF_UPDATE_INDEX] : false;
+        //Object[] sharedPreference = Utility.GetSharedPreference(activity);
+        //boolean hasToBeUpdated = sharedPreference.length == AppConfig.PREFERENCE ? (Boolean) sharedPreference[AppConfig.PREF_UPDATE_INDEX] : false;
 
-        return hasToBeUpdated ? updateDatabase() : ServerError.NO_ERROR;
+        return ServerError.NO_ERROR; //hasToBeUpdated ? updateDatabase() : ServerError.NO_ERROR;
     }
 
     @Override

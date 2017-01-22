@@ -7,8 +7,6 @@ import com.GuessBeerCountry.Activity.Start;
 import com.GuessBeerCountry.Activity.Stats;
 import com.GuessBeerCountry.Database.DatabaseHelper;
 import com.GuessBeerCountry.Model.Base;
-import com.GuessBeerCountry.Task.List;
-import com.GuessBeerCountry.Task.R;
 
 import android.app.Activity;
 import android.content.ContentValues;
@@ -81,8 +79,8 @@ public class Query {
     public static ArrayList<String> GetScore(DatabaseHelper databaseHelper) {
         ArrayList<String> scoreList = new ArrayList<String>();
 
-        int corAns = Game.NumberCorrectAnswer;
-        int wrgAns = Game.NumberWrongAnswer;
+        int corAns = 0; //Game.NumberCorrectAnswer;
+        int wrgAns = 0; //Game.NumberWrongAnswer;
         int score = (corAns * AppConfig.SCORE_COR_ANS_FACTOR) - (wrgAns * AppConfig.SCORE_WRG_ANS_FACTOR);
         long value = (corAns + wrgAns) != 0 ? Math.round(((double) corAns / (double) (corAns + wrgAns)) * 100) : AppConfig.DEFAULT_VALUE;
         Log.i(TAG, "Calculate ANSWER values.");
@@ -243,7 +241,8 @@ public class Query {
     	where = where + " AND Plate.Version <> 0 AND Language.Version <> 0 ORDER BY Country, Name ASC";
     	
     	// Copy the list of the plate from the db that respect the condition above
-    	return GameUtility.CopyDbToList(new ArrayList<Base>(), activity.getBaseContext(), where);
+    	//return GameUtility.CopyDbToList(new ArrayList<Base>(), activity.getBaseContext(), where);
+    	return null;
     }
 
     // Add new stats into the stastics table
@@ -278,7 +277,7 @@ public class Query {
 	// Main query to show the list of strings in statistics
 	public static ArrayList<String> GetStats(Context context, int gameModeId){
 		final int DEFAULT_NUMERIC = 0;
-		String defaultString;
+		String defaultString = null;
 		
 		final String TABLE = "statistics";
 		
@@ -484,7 +483,7 @@ public class Query {
 				while (cursor.moveToNext()) {
 					String conc = null;
 					if (!cursor.isNull(0))
-						conc = queryType != 0 ? Language.GetStatsLocalized(context, queryType, lang, cursor.getString(0)) : cursor.getString(0);
+						conc = cursor.getString(0); //queryType != 0 ? Language.GetStatsLocalized(context, queryType, lang, cursor.getString(0)) : cursor.getString(0);
 					if (!cursor.isNull(1))
 					{
 						conc += " (" + cursor.getString(1) + ")";

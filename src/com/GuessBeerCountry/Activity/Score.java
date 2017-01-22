@@ -137,10 +137,7 @@ public class Score extends SherlockActivity {
             Log.i(TAG, "Setting Language.");
             Theme.SetTheme(ComponentName.Score, this.getBaseContext());
             Log.i(TAG, "Setting Theme.");
-
-            // Add new ad
-            //IMBanner banner = (IMBanner) findViewById(R.id.adView);
-            //banner.loadBanner();
+            
         } catch(Exception ex){
             Log.e(TAG, "Score exception.");
             Log.e(TAG, "Message: " + ex.getMessage());
@@ -172,7 +169,7 @@ public class Score extends SherlockActivity {
     private void showNewRecord()
     {
         Log.i(TAG, "Starting audio new record.");
-        Utility.SetAudio(this, SoundName.Applause);
+        //Utility.SetAudio(this, SoundName.Applause);
 
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.toast, (ViewGroup) findViewById(R.id.toast_layout));

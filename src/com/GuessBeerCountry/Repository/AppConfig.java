@@ -310,4 +310,5 @@ public class AppConfig {
     public static final int STATS_RETRIEVE_LEAST_THEME_INDEX = 8;
     public static final int STATS_RETRIEVE_MOST_RANGE_INDEX = 9;
     public static final int STATS_RETRIEVE_LEAST_RANGE_INDEX = 10;
+	public static final int DEFAULT_VALUE = 0;
 }
