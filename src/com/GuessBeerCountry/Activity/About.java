@@ -17,7 +17,7 @@ import com.actionbarsherlock.app.SherlockActivity;
  * Created by Alberto Tosi Brandi on 07/10/2014.
  */
 public class About extends SherlockActivity {
-    private static String TAG = "Aboute";
+    private static String TAG = "About";
     public static ScrollView ScrollView;
     public static ImageView Logo;
     public static TextView LabVersion;
